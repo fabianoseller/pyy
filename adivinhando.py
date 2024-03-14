@@ -12,19 +12,19 @@ while chute != random:
         chances = chances - 1
         if chute == random:
             print('')
-            print('Parabéns, você venceu! O número era {} e você ainda tinha {} chances.'.format(random, chances))
+            print('Parabéns Vivente/chinoca ...., Tu venceu! O número era {} e você ainda tinha {} chances.'.format(random, chances))
             print('')
             break;
         else:
             print('')
             if chute > random:
-                print('Você errou!!! Dica: É um número menor.')
+                print('Você errou Quera...!!! Dica: É um número menor.')
             else:
-                print('Você errou!!! Dica: É um número maior.')
+                print('Tu errou gauderio(a)!!! Dica: É um número maior.')
             print('Você ainda possui {} chances.'.format(chances))
             print('')
         if chances == 0:
             print('')
-            print('Suas chances acabaram, você perdeu!')
+            print('Suas chances acabaram, você perdeu! mas qe barbaridade tchê')
             print('')
             break;
