@@ -2,11 +2,11 @@ from random import randint
 
 print('#### Iníciando Jogo ####')
 
-random = randint(0, 100)
+random = randint(0, 10)
 chute = 0;
 chances = 10;
 while chute != random:
-    chute = input('Chute um número entre 0 a 100: ')
+    chute = input('Chute um número entre 0 a 10: ')
     if chute.isnumeric():
         chute = int(chute)
         chances = chances - 1
