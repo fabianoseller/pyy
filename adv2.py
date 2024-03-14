@@ -1,4 +1,4 @@
 import random
-number = random.randint(1, 10)
-print(number)
+number0 = random.randint(1, 10)
+print(number0)
 
