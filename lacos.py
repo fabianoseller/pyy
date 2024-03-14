@@ -1,13 +1,7 @@
 #lacos
+numeero = 1
+while numeero <= 5:
+ print(numeero)
+ numeero += 2
 
 
-for i in range(5):
-    print(i)
-    
-    numero = 1
-    
-    while numero <=5:
-        print(numero)
-        numero +=1
-        
-        
