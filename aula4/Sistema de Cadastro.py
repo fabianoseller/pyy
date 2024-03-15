@@ -1,41 +1,11 @@
-from controles.ControladorSistema import ControladorSistema
+#Referencias:
 
-if __name__ == "__main__":
-    ControladorSistema().inicia_sistema()
+##Ainda em desenvolvimento
+#Controle de estoque:
+#Crie um sistema de controle de estoque com as operações de entrada, saída e 
+#consulta de produtos usando while
+#https://pt.stackoverflow.com/questions/555689/sistema-de-cadastro-e-login-python
+
+https://sentry.io/answers/raise-an-exception-in-python/
     
-    # criei um controlador sistema para chamar as funções do meu menu
-    from telas.TelaSistema import TelaSistema
-from controles.ControladorUsuario import ControladorUsuario
-
-
-class ControladorSistema:
-    def __init__(self):
-        self.__tela_sistema = TelaSistema()
-        self.__tela_usuario = ControladorUsuario()
-
-    def inicia_sistema(self):
-        self.abre_tela()
-
-    def cadastra_usuario(self):
-        self.__tela_usuario.cadastro_usuario()
-
-    def login_usuario(self):
-        pass
-
-    def encerra(self):
-        exit(0)
-
-    def abre_tela(self):
-        funcao_escolhida = self.__tela_sistema.mostra_opcoes()
-        if funcao_escolhida == 1:
-            self.__tela_usuario.cadastro_usuario()
-            self.inicia_sistema()
-        elif funcao_escolhida == 2:
-            #self.login_usuario()
-            print('AINDA NÃO ESTÁ DISPONIVEL')
-            self.inicia_sistema()
-        elif funcao_escolhida == 0:
-            self.encerra()
-        else:
-            print('ESSA NÃO É UMA OPÇÃO VÁLIDA')
-            self.inicia_sistema()
+ 
