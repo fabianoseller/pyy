@@ -7,9 +7,5 @@ divisao = 10 / 2
 
 print(soma, diferenca, multiplicacao, divisao)
 
-#Condicionais
-numero = 10
 
-if numero > 5:
-print("O número é o maior que 5")
 

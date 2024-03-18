@@ -1,6 +1,6 @@
 from random import randint
 
-print('#### Iníciando Jogo ####')
+print('#### Iníciando Jogo...te gruda de vereda ####')
 
 random = randint(0, 10)
 chute = 0;
