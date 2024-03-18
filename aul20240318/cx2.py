@@ -9,26 +9,25 @@ def exibir_menu():
     escolha = input("Escolha uma opção: ")
     return escolha
 
-# Função para carregar o saldo do arquivo
 def carregar_saldo():
     try:
         with open("saldo.txt", "r") as file:
             return float(file.read())
     except FileNotFoundError:
-        # Se o arquivo não existir, cria ele com saldo inicial zero
+        
         with open("saldo.txt", "w") as file:
             file.write("0")
         return 0
 
-# Função para salvar o saldo no arquivo
+
 def salvar_saldo(saldo):
     with open("saldo.txt", "w") as file:
         file.write(str(saldo))
 
-# Inicializando o saldo
+
 saldo = carregar_saldo()
 
-# Loop principal do programa
+
 while True:
     opcao = exibir_menu()
 
