@@ -1,0 +1,32 @@
+{
+    "eventos": [
+        {
+            "nome": "Festa de Anivers\u00e1rio",
+            "endereco": "Rua A, 123",
+            "categoria": "Festa",
+            "horario": "2024-04-02T20:00:00",
+            "descricao": "Venha comemorar meu anivers\u00e1rio!"
+        },
+        {
+            "nome": "Corrida Beneficente",
+            "endereco": "Parque B",
+            "categoria": "Eventos Esportivos",
+            "horario": "2024-06-05T09:00:00",
+            "descricao": "Corrida para arrecadar fundos para a caridade"
+        },
+        {
+            "nome": "Festa de Anivers\u00e1rio",
+            "endereco": "Rua A, 123",
+            "categoria": "Festa",
+            "horario": "2024-03-02T20:00:00",
+            "descricao": "Venha comemorar meu anivers\u00e1rio!"
+        },
+        {
+            "nome": "Corrida Beneficente",
+            "endereco": "Parque B",
+            "categoria": "Eventos Esportivos",
+            "horario": "2024-03-05T09:00:00",
+            "descricao": "Corrida para arrecadar fundos para a caridade"
+        }
+    ]
+}
