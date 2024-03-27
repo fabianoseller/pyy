@@ -15,7 +15,6 @@ for exemplo in range(5):
         if lista[exemplo] > maior: 
             maior = lista[exemplo]
         if lista[exemplo] < menor:
-
             menor = lista[exemplo]
  
 
@@ -24,9 +23,6 @@ for exemplo in range(5):
 print(f'Valores digitados: {lista}')
 
 print()
-
 print(f'O maior valor digitado foi {maior}')
-
 print()
-
 print(f'O menor valor digitado foi {menor}')
