@@ -1,0 +1,2 @@
+#Crie um conjunto com os países da América do Sul e outro com os países que você já visitou.
+#Verifique se o conjunto dos países que você já visitou é um subconjunto do conjunto dos países da América do Sul.
