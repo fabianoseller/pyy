@@ -2,7 +2,8 @@
 conjunto = {'Maria', 'Joana', 'Dionisio', 'Alana'}
 sem_duplicados = set()
 for elemento in conjunto:
-    if elemento not in sem_duplicados:
+    """_summary_
+    """    if elemento not in sem_duplicados:
         sem_duplicados.add(elemento)
 print("Conjunto sem elementos duplicados:", sem_duplicados)
 if conjunto != []:
