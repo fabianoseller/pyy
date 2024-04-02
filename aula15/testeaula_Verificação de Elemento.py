@@ -2,16 +2,16 @@
 conjunto = {'Maria', 'Joana', 'Dionisio', 'Alana'}
 sem_duplicados = set()
 for elemento in conjunto:
-    """_summary_
-    """    if elemento not in sem_duplicados:
-        sem_duplicados.add(elemento)
+ 
+ 
+    sem_duplicados.add(elemento)
+
 print("Conjunto sem elementos duplicados:", sem_duplicados)
 if conjunto != []:
-    print("Lista de  nomes no conjunto:", conjunto)
+      print("Lista de  nomes no conjunto:", conjunto)
 else:
-  print("Sua lista está vazia")
-  
-  
+      print("Sua lista está vazia")
+
 novo_nome = input("Escreva o novo nome do da pessoa a ser considerada na lista amigo(a):   ")
 
 print('O novonome da pesoa é:', novo_nome)
