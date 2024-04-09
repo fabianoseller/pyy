@@ -67,7 +67,7 @@ while True:
     opcao = input("Escolha uma opção: ")
 
     if opcao == "1":
-        visualizar_dicionario(animais_sons)
+        visualizar_dicionario(animais_sons)cd py
     elif opcao == "2":
         adicionar_animal()
     elif opcao == "3":
