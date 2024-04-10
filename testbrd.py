@@ -2,8 +2,11 @@
 # pip install tiktoken
 
 #https://pypi.org/project/tiktoken/
+# 💡 If you have Windows and you have set up the py alias
+# py -m pip install tiktoken
 
 import tiktoken
+
 
 string = """Lo que subyace al racismo algorítmico
 Entre las causas apuntadas para tales situaciones, están:
@@ -25,6 +28,10 @@ Fomentar la inclusión de voces marginadas en la ciencia y la tecnología contri
 
 Solo así podremos asegurar que la IA sea un aporte al desarrollo."""
 
+
 enc = tiktoken.encoding_for_model("gpt-4")
 result = enc.encode(string)
 print(len(result))
+
+#https://saurabhjadhavblogs.com/installing-langchain-how-to-install-langchain-and-get-started-with-it
+#https://python.langchain.com/docs/get_started/quickstart/
