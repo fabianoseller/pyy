@@ -11,8 +11,9 @@
 #     └── livro.py
 
 
-import adicionaremoveelementospct.produto as prod
-import adicionaremoveelementospct.livro as liv 
+import produto.produto as prod
+import livro.livro as liv
+
 
 
 
