@@ -11,18 +11,15 @@
 #     └── livro.py
 
 
-import produto.produto as prod
 import livro.livro as liv
-
-
-
-
-
-print(f"Dicionário de Produto (COM a chave 'cor'): {prod.produto}")
+import produto.produto as prod
 produto_sem_cor = prod.remover_cor(prod.produto)
-print(f"Dicionário de Produto (sem a chave 'cor'): {produto_sem_cor}")
 
-print(f"Dicionário de Livro (SEM a chave 'tradução'): {liv.livro}")
+
+
+
 livro_com_traducao = liv.adicionar_traducao(liv.livro)
 print(f"Dicionário de Livro (com a chave 'tradução'): {livro_com_traducao}")
+
+#https://docs.python.org/pt-br/3.11/tutorial/modules.html
 
