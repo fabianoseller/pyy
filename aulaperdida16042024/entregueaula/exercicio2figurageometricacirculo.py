@@ -16,8 +16,7 @@ class Circulo(FiguraGeometrica):
         self.raio = raio
 
     def calcular_area(self):
-        return 3.14000 * self.raio ** 2
-    #aqui testando com valor original do py para ver o que eacotecia, sem chamar "PY"
+        return math.pi * self.raio ** 2
 
     def descrever(self):
         print(f"Círculo com raio {self.raio}")
