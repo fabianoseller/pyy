@@ -31,11 +31,11 @@ class ContaPoupanca(ContaBancaria):
         return super().calcular_rendimento() + self.rendimento_mensal
 
 
-# Criando objetos
+# Criando objetos como conta1 e conta_poupança
 conta1 = ContaBancaria("João", 1000, 1.5)
 conta_poupanca1 = ContaPoupanca("Maria", 2000, 2.0, 50)
 
-# Chamando métodos
+# Chamando métodos para conta1
 conta1.apresentar_saldo()
 conta1.depositar(500)
 conta1.apresentar_saldo()

@@ -50,10 +50,10 @@ class Carro(Veiculo):
         print(f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Cor: {self.cor}, Número de Portas: {self.numero_portas}, Tipo de Câmbio: {self.tipo_cambio}")
 
 
-# Criando objeto
+# Criando objeto carro1 ,para eu entender
 carro1 = Carro("Toyota", "Corolla", 2022, "Preto", 4, "Automático")
 
-# Chamando métodos
+# Chamando métodos com o carro e os mrtodos relacionados
 carro1.ligar()
 carro1.acelerar()
 carro1.frear()
