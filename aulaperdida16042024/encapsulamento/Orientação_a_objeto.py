@@ -998,7 +998,7 @@ while True:
                             return len(self.texto)  
 
                     texto = "Exemplo de string"
-                    string_invertida = String(texto)
+                    string = String(texto)
 
                     print(f"O comprimento da string é: {len(string_invertida)}")
                     
