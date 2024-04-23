@@ -1,5 +1,5 @@
 class Voo:
-    def __init__(self, codigo, companhia, origem, destino, horario_saida, horario_chegada, preco_passagem):
+    def __init__(self, tempo_de_voo_alternativo, codigo, companhia, origem, destino, horario_saida, horario_chegada, preco_passagem):
         self.codigo = codigo
         self.companhia = companhia
         self.origem = origem
@@ -7,6 +7,7 @@ class Voo:
         self.horario_saida = horario_saida
         self.horario_chegada = horario_chegada
         self.preco_passagem = preco_passagem
+        self.tempo_de_voo_alternativo = tempo_de_voo_alternativo
     
     def calcular_duracao_voo(self):
         return self.horario_chegada - self.horario_saida
@@ -22,4 +23,5 @@ class Voo:
         print("Horário de Saída:", self.horario_saida)
         print("Horário de Chegada:", self.horario_chegada)
         print("Preço da Passagem com Desconto:", self.preco_passagem)
+        print("Tempo_de_voo_alternativo:", self.tempo_de_voo_alternativo)
 
