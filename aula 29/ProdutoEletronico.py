@@ -11,7 +11,7 @@ class ProdutoEletronico:
     def garantia_estendida(self):
         return self.garantia_estendida + self.aumentar_preco
     
-    def  garantia_estendida(self): FALTA CRIR OPÇÇÃO AQUI APRA VR COM FAZER "EM CONSTRUÇÃO"
+    def  garantia_estendida(self): FALTA CRIR OPÇÇÃO AQUI APRA VR COM FAZER "EM CONSTRUÇÃO" xx
     
     def calcula_valor_totalavalor_Totalself, percentual):
         self.preco_passagem -= self.preco_passagem * percentual / 100
