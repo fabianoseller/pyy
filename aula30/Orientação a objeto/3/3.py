@@ -4,12 +4,10 @@ class Funcionario:
   def __init__(self, nome, salario):
     self.nome = nome
     self.salario = salario
-    
+
   def mostrar_dados(self):
     print(f"Nome: {self.nome}")
     print(f"Salário: R$ {self.salario:.2f}")
-     
-    
 
 class Gerente(Funcionario):
  
@@ -25,8 +23,6 @@ class Gerente(Funcionario):
   def mostrar_dados(self):
     super().mostrar_dados()
     print(f"Bônus: R$ {self.bonus:.2f}")
-
-#https://www.hashtagtreinamentos.com/classes-no-python?gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXt2-W2SPG2-gGDG80na3EsXK2hxi1N6m8wpuQOexEia0Cw9ggobp9yRoCcn8QAvD_BwE
 
 class Vendedor(Funcionario):
   
@@ -66,4 +62,3 @@ for funcionario in funcionarios:
 
 print("\nDados do Gerente:")
 gerente1.mostrar_dados()
-
