@@ -46,7 +46,7 @@ def validar_time():
 janela = tk.Tk()
 janela.title("Validando Entrada")
 
-# Campo de nome
+
 label_nome = tk.Label(janela, text="Nome:")
 label_nome.pack()
 entrada_nome = tk.Entry(janela)
@@ -58,7 +58,7 @@ rotulo_erro_nome.pack()
 rotulo_nome = tk.Label(janela, text="")
 rotulo_nome.pack()
 
-# Campo de gênero
+
 label_genero = tk.Label(janela, text="Gênero:")
 label_genero.pack()
 entrada_genero = tk.Entry(janela)
@@ -70,7 +70,7 @@ rotulo_erro_genero.pack()
 rotulo_genero = tk.Label(janela, text="")
 rotulo_genero.pack()
 
-# Campo de idade
+
 label_idade = tk.Label(janela, text="Idade:")
 label_idade.pack()
 entrada_idade = tk.Entry(janela)
@@ -82,7 +82,7 @@ rotulo_erro_idade.pack()
 rotulo_idade = tk.Label(janela, text="")
 rotulo_idade.pack()
 
-# Campo de cidade
+
 label_cidade = tk.Label(janela, text="Cidade:")
 label_cidade.pack()
 entrada_cidade = tk.Entry(janela)
@@ -94,7 +94,7 @@ rotulo_erro_cidade.pack()
 rotulo_cidade = tk.Label(janela, text="")
 rotulo_cidade.pack()
 
-# Campo de time
+
 label_time = tk.Label(janela, text="Time de Futebol:")
 label_time.pack()
 entrada_time = tk.Entry(janela)
