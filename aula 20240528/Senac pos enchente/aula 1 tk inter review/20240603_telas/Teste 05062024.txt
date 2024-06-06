@@ -1,0 +1,9 @@
+import tkinter as tk
+#importa a biblioteca Tkinter e a renomeia para tk. Isso permite que você use as classes e funções do Tkinter sem precisar escrever tkinter. antes de cada uma delas.
+import os
+# Importa o módulo os da biblioteca padrão do Python.
+# O módulo os fornece diversas funções para interagir com o sistema operacional, como:
+# Criar e gerenciar arquivos e diretórios
+# Executar comandos do sistema operacional
+# Obter informações do sistema
+# Acessar variáveis de ambiente

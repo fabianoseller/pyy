@@ -70,7 +70,7 @@ def atualizar_contagem_caracteres():
 # Função para atualizar contagem de letras
 def atualizar_contagem_letras():
     texto = campo_texto.get("1.0", tk.END)
-    label_letras.config(text=f"Contagem de letras: {contor_letras(texto)}")
+    label_letras.config(text=f"Contagem de letras: {contar_letras(texto)}")
 
 # Atualizar contagem de caracteres e letras
 campo_texto.bind("<KeyRelease>", atualizar_contagem_caracteres)
