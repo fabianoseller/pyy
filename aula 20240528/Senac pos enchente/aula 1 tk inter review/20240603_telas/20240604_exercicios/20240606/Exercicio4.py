@@ -19,7 +19,7 @@ def carregar_texto():
         with open(arquivo_completo, "r") as arquivo:
             texto.delete(1.0, tk.END)
             texto.insert(tk.END, arquivo.read())
-            mensagem_status.config(text=f"Texto carregado com sucesso")
+            mensagem_status.config(text=f"Texto carregado com sucesso. Quantidade de letras: {len(texto.get(1.0, tk.END))}")
 
     except Exception as e:
         mensagem_status.config(text=f"Erro ao carregar: {e}")
@@ -38,7 +38,7 @@ def salvar_texto():
 
         with open(arquivo_completo, "w") as arquivo:
             arquivo.write(texto.get(1.0, tk.END))
-            mensagem_status.config(text=f"Texto salvo com sucesso")
+            mensagem_status.config(text=f"Texto salvo com sucesso em '{arquivo_completo}'. Quantidade de letras: {len(texto.get(1.0, tk.END))}")
 
     except Exception as e:
         mensagem_status.config(text=f"Erro ao salvar: {e}")
