@@ -60,6 +60,7 @@ class App(tk.Tk):
             self.submenu_arquivo.entryconfig("Abrir", state=tk.DISABLED)
             self.submenu_arquivo.entryconfig("Desfazer", state=tk.NORMAL)
 
+    # explicação aula duvida
     def create_submenu_arquivo(self):
         submenu_arquivo = tk.Menu(self.menu_principal, tearoff=0)
         submenu_arquivo.add_command(label="Novo", command=lambda: print("Novo arquivo"), state=tk.NORMAL)
