@@ -6,16 +6,16 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        # Criar janela principal com título
+        # Exemplo de aprendizado menus >>> janela principal com título
         self.title("Meu Programa")
 
-        # Criar menu principal
+        # Exemplo de aprendizado menus >>> menu principal
         self.menu_principal = tk.Menu(self)
 
-        # Criar item principal
+        # Exemplo de aprendizado menus >>> item principal
         self.menu_principal.add_cascade(label="Arquivo", menu=self.create_submenu_arquivo())
 
-        # Criar submenu "Arquivo"
+        # Exemplo de aprendizado menus >>> submenu "Arquivo"
         self.submenu_arquivo = tk.Menu(self.menu_principal, tearoff=0)
         self.submenu_arquivo.add_command(label="Novo", command=lambda: print("Novo arquivo"), state=tk.NORMAL)
         self.submenu_arquivo.add_command(label="Abrir", command=self.abrir_arquivo, state=tk.NORMAL)
@@ -23,28 +23,28 @@ class App(tk.Tk):
         self.submenu_arquivo.add_command(label="Desfazer", command=lambda: print("Desfazer"), state=tk.DISABLED)
         self.menu_principal.add_cascade(label="Arquivo", menu=self.submenu_arquivo)
 
-        # Criar submenu "Editar"
+        # Exemplo de aprendizado menus >>> submenu "Editar"
         self.submenu_editar = tk.Menu(self.menu_principal, tearoff=0)
         self.submenu_editar.add_command(label="Copiar", command=lambda: print("Copiar"))
         self.submenu_editar.add_command(label="Conteúdo", command=lambda: print("Conteúdo"))
         self.menu_principal.add_cascade(label="Editar", menu=self.submenu_editar)
 
-        # Criar submenu "Ajuda"
+        # Exemplo de aprendizado menus >>> submenu "Ajuda"
         self.submenu_ajuda = tk.Menu(self.menu_principal, tearoff=0)
         self.submenu_ajuda.add_command(label="Sobre", command=lambda: print("Sobre"))
         self.menu_principal.add_cascade(label="Ajuda", menu=self.submenu_ajuda)
 
-        # Criar variável para controlar o estado das opções
+        # Exemplo de aprendizado menus >>> variável para controlar o estado das opções
         self.estado_opcoes = tk.BooleanVar()
         self.estado_opcoes.set(True)
 
-        # Adicionar item ao menu para alternar o estado das opções
+        # Exemplo de aprendizado menus >>> Adicionar item ao menu para alternar o estado das opções
         self.menu_principal.add_checkbutton(label="Ativar/Desativar Opções", variable=self.estado_opcoes, command=self.alternar_estado_opcoes)
 
-        # Criar item de sair
+        # Exemplo de aprendizado menus >>> item de sair
         self.menu_principal.add_command(label="Sair", command=self.fechar)
 
-        # Criar item de fechar
+        # Exemplo de aprendizado menus >>> item de fechar
         self.menu_principal.add_command(label="Fechar", command=self.fechar)
 
         # Adicionar menu principal à janela
