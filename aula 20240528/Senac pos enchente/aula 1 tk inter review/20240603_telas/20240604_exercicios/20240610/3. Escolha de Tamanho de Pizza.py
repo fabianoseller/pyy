@@ -1,6 +1,19 @@
 import tkinter as tk
 from tkinter import ttk
 
+# Fluxo de Execução
+# O usuário escolhe o tamanho da pizza no menu de opções.
+# O usuário digita a quantidade de pizzas no campo de entrada.
+# O usuário clica no botão "Pedir".
+# A função pedir_pizza é executada, calculando o total a pagar com base no tamanho e quantidade de pizzas escolhidas.
+# O resultado é exibido no rótulo label_resultado.
+
+# Observações
+# O código utiliza a biblioteca tkinter para criar a janela e componentes gráficos.
+# A função pedir_pizza utiliza a variável opcao_tamanho para obter a opção escolhida pelo usuário e calcular o total a pagar.
+# O código utiliza a função pack para organizar os componentes na janela.
+# O código utiliza a função mainloop para iniciar o loop principal da janela, permitindo que o aplicativo interaja com o usuário.
+
 def pedir_pizza():
     tamanho = opcao_tamanho.get()
     quantidade = int(entrada_quantidade.get())
@@ -45,4 +58,6 @@ label_resultado.pack()
 
 root.mainloop()
 # teste 
+
+
 
