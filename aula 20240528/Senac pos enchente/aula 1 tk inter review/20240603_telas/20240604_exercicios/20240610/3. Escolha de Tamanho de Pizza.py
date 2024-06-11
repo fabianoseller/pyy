@@ -56,6 +56,9 @@ botao_pedir.pack()
 label_resultado = tk.Label(root, text="")
 label_resultado.pack()
 
+botao_sair = tk.Button(root, text="Sair", command=root.quit)
+botao_sair.pack()
+
 root.mainloop()
 # teste 
 
