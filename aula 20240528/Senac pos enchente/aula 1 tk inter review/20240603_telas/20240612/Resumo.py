@@ -16,7 +16,7 @@ class InterfaceGrafica:
         self.botao1.pack(pady=5)
         self.botao2 = tk.Button(self.root, text="2. Widgets: Blocos de Construção", command=lambda: self.abrir_topico("Widgets: Blocos de Construção"))
         self.botao2.pack(pady=5)
-        self.botao3 = tk.Button(self.root, text="3. Grid: Gerenciandores de layout",state=tk.DISABLED ,command=lambda: self.abrir_topico("Grid: Gerenciandores de layout"))
+        self.botao3 = tk.Button(self.root, text="3. Grid: Gerenciandores de layout",state=tk.NORMAL ,command=lambda: self.abrir_topico("Grid: Gerenciandores de layout"))
         self.botao3.pack()
        
         # self.botao11 = tk.Button(self.root, text="1 - A Criação da Janela Principal", command=self.Criacao_de_Janela_Principal)  # Chamada da função (se necessário)
