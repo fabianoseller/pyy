@@ -1148,46 +1148,7 @@ class InterfaceGrafica:
             self.botao_Label = tk.Button(nova_janela, text="sticky", command=sticky_explicacao)
             self.botao_Label.pack(pady=5, side=tk.LEFT, expand=True)
             
-            
-
-     
-
-            
-       
-            
-            
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-           
-            
-
-
-
-
-
+   
 
         
 

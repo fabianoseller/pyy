@@ -55,3 +55,4 @@ CREATE TABLE Pizza_Ingredientes (
   FOREIGN KEY (pizza_id) REFERENCES Pizzas(pizza_id),
   FOREIGN KEY (ingrediente_id) REFERENCES Ingredientes(ingrediente_id)
 );
+#
