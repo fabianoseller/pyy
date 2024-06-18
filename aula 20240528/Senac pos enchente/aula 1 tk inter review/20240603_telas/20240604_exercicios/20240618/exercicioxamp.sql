@@ -1,10 +1,10 @@
-##Criar o banco de dados
+##Aprendizado Criando >>> o banco de dados
 CREATE DATABASE pizzasnachtech;
 
 ##Conectar ao banco de dados
 USE telepizza;
 
-##Criar a tabela Clientes
+##Aprendizado Criando >>> a tabela Clientes
 CREATE TABLE Clientes (
   cliente_id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(255) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE Clientes (
   telefone VARCHAR(20) NOT NULL
 );
 
-##Criar a tabela Pedidos
+##Aprendizado Criando >>> a tabela Pedidos
 CREATE TABLE Pedidos (
   pedido_id INT PRIMARY KEY AUTO_INCREMENT,
   cliente_id INT NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE Pedidos (
   FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id)
 );
 
-##Criar a tabela Pizzas
+##Aprendizado Criando >>> a tabela Pizzas
 CREATE TABLE Pizzas (
   pizza_id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(255) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE Pizzas (
   preco DECIMAL(10,2) NOT NULL
 );
 
-##Criar a tabela Itens_pedido
+##Aprendizado Criando >>> a tabela Itens_pedido
 CREATE TABLE Itens_pedido (
   item_pedido_id INT PRIMARY KEY AUTO_INCREMENT,
   pedido_id INT NOT NULL,
@@ -40,14 +40,14 @@ CREATE TABLE Itens_pedido (
   FOREIGN KEY (pizza_id) REFERENCES Pizzas(pizza_id)
 );
 
-##Criar a tabela Ingredientes
+##Aprendizado Criando >>> a tabela Ingredientes
 CREATE TABLE Ingredientes (
   ingrediente_id INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(255) NOT NULL,
   tipo VARCHAR(255) NOT NULL
 );
 
-##Criar a tabela Pizza_Ingredientes
+##Aprendizado Criando >>> a tabela Pizza_Ingredientes
 CREATE TABLE Pizza_Ingredientes (
   pizza_ingrediente_id INT PRIMARY KEY AUTO_INCREMENT,
   pizza_id INT NOT NULL,
