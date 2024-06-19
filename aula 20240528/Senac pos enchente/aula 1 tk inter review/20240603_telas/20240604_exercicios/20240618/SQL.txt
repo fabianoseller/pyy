@@ -1,0 +1,19 @@
+ # Conectar-se ao servidor MySQL para criar o banco de dados
+    cnx = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password=''
+    )
+
+    # Criar o banco de dados agenda
+    cursor = cnx.cursor()
+    cursor.execute('')
+    cnx.commit()
+
+    # Conectar-se ao banco de dados agenda recém-criado
+    cnx = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password='',
+        database=''  
+    )

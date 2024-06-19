@@ -116,10 +116,17 @@ def mostrar_pedido():
 tk.Button(root, text="Mostrar Pedido ADICIONAL", command=mostrar_pedido).grid(row=6, column=1, padx=10, pady=10)
 
 # Botão para cancelar pedidos
+
+
 def cancelar_pedido():
     for widget in root.winfo_children():
         if isinstance(widget, tk.Label):
             widget.destroy()
+    quantidade.delete(0, tk.END)
+    for var in var_ingredientes:
+        var.set(False)
+
+
 
 tk.Button(root, text="Cancelar", command=cancelar_pedido).grid(row=7, column=0, columnspan=2, padx=10, pady=10)
 # Configura o tamanho das linhas
@@ -127,5 +134,6 @@ root.grid_rowconfigure(0, weight=1)
 root.grid_rowconfigure(1, weight=1)
 
 tk.Button(root, text="Pedir", command=pedir).grid(row=6, column=0, padx=10, pady=10, sticky=tk.E)
+
 
 root.mainloop()
