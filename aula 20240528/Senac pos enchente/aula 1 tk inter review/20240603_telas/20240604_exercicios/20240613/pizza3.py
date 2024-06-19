@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import mysql.connector
 
 def padx_explicacao():
     nova_janela = tk.Toplevel(root)
@@ -137,3 +138,176 @@ tk.Button(root, text="Pedir", command=pedir).grid(row=6, column=0, padx=10, pady
 
 
 root.mainloop()
+
+
+
+# Conectar-se ao servidor MySQL para criar o banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password=''
+)
+
+# Criar o banco de dados pizzasnachtech
+cursor = cnx.cursor()
+cnx.commit()
+
+# Conectar-se ao banco de dados pizzasnachtech recém-criado
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+import mysql.connector
+
+# Conectar-se ao servidor MySQL
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password=''
+)
+
+# Verificar se a conexão foi estabelecida
+if cnx.is_connected():
+    print("Conexão estabelecida com sucesso!")
+else:
+    print("Falha na conexão.")
+
+# Fechar a conexão
+cnx.close()
+
+
+#### teste insert
+import mysql.connector
+
+# Conectar-se ao servidor MySQL
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password=''
+)
+import mysql.connector
+
+# Conectar-se ao servidor MySQL para criar o banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password=''
+)
+
+# Criar o banco de dados pizzasnachtech
+cursor = cnx.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS pizzasnachtech")
+cnx.commit()
+
+# Conectar-se ao banco de dados pizzasnachtech recém-criado
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+# Criar a tabela pedidosimport mysql.connector
+
+# Conectar-se ao servidor MySQL para criar o banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password=''
+)
+
+# Criar o banco de dados pizzasnachtech
+cursor = cnx.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS pizzasnachtech")
+cnx.commit()
+
+# Conectar-se ao banco de dados pizzasnachtech recém-criado
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+# Criar a tabela clientes
+cursor = cnx.cursor()
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS clientes (
+        cliente_id INT AUTO_INCREMENT,
+        nome VARCHAR(50),
+        email VARCHAR(50),
+        telefone VARCHAR(20),
+        PRIMARY KEY (cliente_id)
+    );
+""")
+
+# Inserir dados de exemplo na tabela clientes
+cursor.execute("""
+    INSERT INTO clientes (nome, email, telefone)
+    VALUES
+        ('João Silva', 'joao@example.com', '123456789'),
+        ('Maria Oliveira', 'maria@example.com', '987654321'),
+        ('Pedro Almeida', 'pedro@example.com', '456789123');
+""")
+
+# Criar a tabela pedidos
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS pedidos (
+        pedido_id INT AUTO_INCREMENT,
+        cliente_id INT,
+        data_hora_pedido DATETIME,
+        forma_pagamento VARCHAR(20),
+        status VARCHAR(20),
+        PRIMARY KEY (pedido_id),
+        FOREIGN KEY (cliente_id) REFERENCES clientes(cliente_id)
+    );
+""")
+
+# Inserir dados exemplos na tabela pedidos
+cursor.execute("""
+    INSERT INTO pedidos (cliente_id, data_hora_pedido, forma_pagamento, status)
+    VALUES
+        (1, '2024-06-15 14:30:00', 'Cartão de Crédito', 'Pendente'),
+        (2, '2024-06-16 10:00:00', 'Dinheiro', 'Concluído'),
+        (3, '2024-06-17 12:00:00', 'Cartão de Débito', 'Pendente');
+""")
+
+# Confirmar as alterações
+cnx.commit()
+
+# Fechar a conexão
+cnx.close()
+
+## ---
+import mysql.connector
+
+# Conectar-se ao banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+# Criar um cursor
+cursor = cnx.cursor()
+
+# Consultar a tabela clientes
+print("Dados da tabela clientes:")
+cursor.execute("SELECT * FROM clientes")
+for row in cursor:
+    print(f"Cliente ID: {row[0]}, Nome: {row[1]}, Email: {row[2]}, Telefone: {row[3]}")
+
+print("\nDados da tabela pedidos:")
+# Consultar a tabela pedidos
+cursor.execute("SELECT * FROM pedidos")
+for row in cursor:
+    print(f"Pedido ID: {row[0]}, Cliente ID: {row[1]}, Data/Hora: {row[2]}, Forma de Pagamento: {row[3]}, Status: {row[4]}")
+
+# Fechar a conexão
+cnx.close()
+
+
