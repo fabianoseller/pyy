@@ -266,13 +266,45 @@ cursor.execute("""
     );
 """)
 
-# Inserir dados exemplos na tabela pedidos
+# Inserir dados exemplos na tabela clientes
 cursor.execute("""
-    INSERT INTO pedidos (cliente_id, data_hora_pedido, forma_pagamento, status)
+    INSERT INTO clientes (nome, email, telefone)
     VALUES
-        (1, '2024-06-15 14:30:00', 'Cartão de Crédito', 'Pendente'),
-        (2, '2024-06-16 10:00:00', 'Dinheiro', 'Concluído'),
-        (3, '2024-06-17 12:00:00', 'Cartão de Débito', 'Pendente');
+        ('Ana Costa', 'ana@example.com', '123456789'),
+        ('João Silva Jr.', 'joaojr@example.com', '123456789'),
+        ('Maria Silva', 'maria@example.com', '123456789'),
+        ('Pedro Silva', 'pedro@example.com', '123456789'),
+        ('Ana Silva', 'ana@example.com', '123456789'),
+        ('João Silva III', 'joaoiii@example.com', '123456789'),
+        ('Maria Silva Jr.', 'mariajr@example.com', '123456789'),
+        ('Pedro Silva Jr.', 'pedrojr@example.com', '123456789'),
+        ('Ana Silva Jr.', 'anajr@example.com', '123456789'),
+        ('João Silva IV', 'joaoiv@example.com', '123456789'),
+        ('Maria Silva III', 'mariaiii@example.com', '123456789'),
+        ('Pedro Silva III', 'pedroiii@example.com', '123456789');
+""")
+
+cursor.execute("""
+    INSERT INTO clientes (nome, email, telefone)
+    VALUES
+        ('Ana Costa', 'ana@example.com', '123456789'),
+        ('João Silva Jr.', 'joaojr@example.com', '123456789'),
+        ('Maria Silva', 'maria@example.com', '123456789'),
+        ('Pedro Silva', 'pedro@example.com', '123456789'),
+        ('Ana Silva', 'ana@example.com', '123456789'),
+        ('Tiago III', 'tiagoiii@example.com', '123456789'),
+        ('Maria Silva Jr.', 'mariajr@example.com', '123456789'),
+        ('Pedro Silva Jr.', 'pedrojr@example.com', '123456789'),
+        ('Ana Silva Jr.', 'anajr@example.com', '123456789'),
+        ('Bartolomeu IV', 'bartolomeuiv@example.com', '123456789'),
+        ('Maria Silva III', 'mariaiii@example.com', '123456789'),
+        ('Filipe III', 'filipeiii@example.com', '123456789');
+""")
+
+# Atualizar os endereços de e-mail
+cursor.execute("""
+    UPDATE clientes
+    SET email = REPLACE(email, '@example.com', '@brocolis.com')
 """)
 
 # Confirmar as alterações
@@ -295,6 +327,8 @@ cnx = mysql.connector.connect(
 # Criar um cursor
 cursor = cnx.cursor()
 
+
+
 # Consultar a tabela clientes
 print("Dados da tabela clientes:")
 cursor.execute("SELECT * FROM clientes")
@@ -309,5 +343,59 @@ for row in cursor:
 
 # Fechar a conexão
 cnx.close()
+
+# Vou criar 90 registros na tabela pedidos com os campos pedido_id, cliente_id, data_hora_pedido, forma_pagamento e status.
+
+# Criar um cursor
+    
+    
+# Conectar-se ao banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+
+# Criar um cursor
+cursor = cnx.cursor()
+
+# Inserir 90 registros na tabela clientes
+
+cursor.execute("SELECT * FROM clientes WHERE cliente_id = 1")
+if cursor.fetchone() is None:
+    cursor.execute("INSERT INTO clientes (cliente_id) VALUES (1)")
+
+
+
+for i in range(115, 200):
+    cursor.execute("""
+        INSERT INTO clientes (cliente_id, nome, email, telefone)
+        VALUES
+            (%s, 'Cliente %s', 'cliente%s@example.com', '123456789')
+    """, (i, i, i))
+
+# Confirmar as alterações
+cnx.commit()
+
+# Consultar a tabela pedidos
+
+# Conectar-se ao banco de dados
+cnx = mysql.connector.connect(
+    host='127.0.0.1',
+    user='root',
+    password='',
+    database='pizzasnachtech'
+)
+
+print("Dados da tabela pedidos:")
+cursor.execute("SELECT * FROM pedidos")
+for row in cursor:
+    print(f"Pedido ID: {row[0]}, Cliente ID: {row[1]}, Data/Hora: {row[2]}, Forma de Pagamento: {row[3]}, Status: {row[4]}")
+
+# Fechar a conexão
+cnx.close()
+
 
 
