@@ -1,0 +1,11 @@
+cnx = mysql.connector.connect(
+                    host='127.0.0.1',
+                    user='root',
+                    password='',
+                    database='telepizza'
+                    )
+                   
+                    cursor = cnx.cursor()
+                    cursor.execute("INSERT INTO pedidos (data, tamanho, quantidade, valor_total) VALUES (%s, %s, %s, %s)", (datetime.datetime.now(), tamanho, quantidade, valor_total))
+                    cnx.commit()
+                    cnx.close()

@@ -1,0 +1,4 @@
+https://pypi.org/project/mysql-connector-python/
+https://pythoniluminado.netlify.app/mysql
+pip install mysql-connector
+import mysql.connector

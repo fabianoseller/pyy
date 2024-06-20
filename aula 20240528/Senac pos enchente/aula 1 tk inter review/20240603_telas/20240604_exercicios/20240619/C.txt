@@ -1,0 +1,46 @@
+import datetime
+import mysql.connector
+
+cnx = mysql.connector.connect(host='127.0.0.1',user='root',password='')
+
+# Executar a instrução SQL para verificar se o banco de dados existe
+cursor = cnx.cursor()
+cursor.execute('SELECT COUNT(*) FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = "telepizza";')
+
+# Obter o número de resultados
+num_results = cursor.fetchone()[0]
+
+# Fechar a conexão com o banco de dados
+cnx.close()
+
+# Se o número de resultados for maior que zero, o banco de dados existe
+if num_results > 0:
+  print('O banco de dados telepizza existe e esta pronto para uso.')
+else:
+    # Conectar-se ao servidor MySQL para criar o banco de dados
+    cnx = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password=''
+    )
+
+    # Criar o banco de dados agenda
+    cursor = cnx.cursor()
+    cursor.execute('CREATE DATABASE telepizza;')
+    cnx.commit()
+
+    # Conectar-se ao banco de dados agenda recém-criado
+    cnx = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password='',
+        database='telepizza'  # Especificar o banco de dados
+    )
+
+    # Criar a tabela contatos
+    cursor = cnx.cursor()
+    cursor.execute('CREATE TABLE pedidos (id INT AUTO_INCREMENT PRIMARY KEY, data DATE NOT NULL, tamanho VARCHAR(255),quantidade VARCHAR(255), valor_total DECIMAL(10,2) NOT NULL);')
+   
+    # Fechar a conexão com o banco de dados
+    cnx.commit()
+    cnx.close()
