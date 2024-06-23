@@ -365,3 +365,74 @@ class OrderForm(tk.Frame):
 if __name__ == "__main__":
     app = PizzariaTech()
     app.mainloop()
+
+
+
+################## DOCS Documentação do Código PizzariaTech
+# 1. Visão Geral
+# O projeto PizzariaTech é uma aplicação de desktop desenvolvida em Python utilizando a biblioteca Tkinter para a interface gráfica. Ele gerencia o cadastro de clientes, pedidos e geração de relatórios em formato Excel. Além disso, utiliza MySQL como banco de dados para armazenar e recuperar informações dos clientes e pedidos.
+
+# 2. Estrutura do Código
+# O código está organizado em três classes principais:
+
+# PizzariaTech
+# Esta é a classe principal que herda de tk.Tk e representa a aplicação principal. Ela cria a interface gráfica, define o menu e gerencia a exibição dos formulários de clientes, pedidos e relatórios.
+
+# Métodos:
+# __init__(): Inicializa a aplicação e configura o menu principal.
+# show_client_form(), hide_client_form(), show_order_form(), hide_order_form(): Métodos para exibir e ocultar os formulários de clientes e pedidos.
+# generate_report(): Gera um relatório em Excel com os dados de clientes e pedidos.
+# ClientForm
+# Esta classe representa o formulário para o cadastro de clientes.
+
+# Widgets:
+
+# Labels e Entries para inserção de dados do cliente.
+# Treeview para exibir os clientes cadastrados.
+# Botões para salvar, adicionar novo cliente e voltar.
+# Métodos:
+
+# __init__(master): Inicializa o formulário de cliente.
+# save_client(): Salva um novo cliente no banco de dados.
+# load_data(): Carrega os dados dos clientes do banco de dados.
+# Outros métodos para interação com o banco de dados e interface gráfica.
+# OrderForm
+# Esta classe representa o formulário para o cadastro de pedidos.
+
+# Widgets:
+
+# Labels e Entries para inserção de dados do pedido.
+# Treeview para exibir os pedidos cadastrados.
+# Botões para salvar, adicionar novo pedido e voltar.
+# Métodos:
+
+# __init__(master): Inicializa o formulário de pedido.
+# save_order(): Salva um novo pedido no banco de dados.
+# load_data(): Carrega os dados dos pedidos do banco de dados.
+# Outros métodos para interação com o banco de dados e interface gráfica.
+# 3. Funcionalidades
+# Cadastro de Clientes: Permite inserir, visualizar e salvar clientes no banco de dados MySQL.
+# Cadastro de Pedidos: Permite inserir, visualizar e salvar pedidos no banco de dados MySQL.
+# Geração de Relatórios: Permite gerar um relatório em Excel com os dados de clientes e pedidos, com a opção de escolher o diretório de destino.
+# 4. Requisitos
+# Python 3.x
+# Bibliotecas: tkinter, tkinter.ttk, mysql-connector-python, xlsxwriter
+# 5. Utilização
+# Execute o arquivo PizzariaTech.py.
+# Utilize o menu principal para navegar entre as funcionalidades.
+# Preencha os formulários de clientes e pedidos e salve os registros.
+# Gere relatórios em Excel através do menu de relatórios.
+# 6. Limitações
+# Não há tratamento avançado de exceções ou validações específicas nos formulários.
+# # A aplicação assume conexão local com o MySQL e pode necessitar de ajustes para conexões remotas ou em ambientes diferentes.
+# # 7. Melhorias Futuras
+# # Implementação de validações de entrada mais robustas.
+# # Melhoria na interface gráfica com uso de estilos e temas.
+# # Suporte a múltiplos usuários e permissões de acesso.
+# # Esta documentação fornece uma visão geral clara do código e suas funcionalidades, ajudando a entender sua estrutura e propósito.
+
+
+
+
+
+
