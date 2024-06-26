@@ -1,37 +1,31 @@
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog
+from tkinter import ttk
+from tkinter import messagebox
 import mysql.connector
 from datetime import datetime
-import xlsxwriter
-import os
 
 class PizzariaTech(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("PizzariaTech")
 
-        # Criar o menu principal
+        # Exemplo de criação o menu principal
         self.menubar = tk.Menu(self)
         self.config(menu=self.menubar)
 
-        # Criar o submenu "Cadastro"
+        # Exemplo de criação o submenu "Cadastro"
         self.cadastro_menu = tk.Menu(self.menubar)
         self.menubar.add_cascade(label="Cadastro", menu=self.cadastro_menu)
         self.cadastro_menu.add_command(label="Clientes", command=self.show_client_form)
         self.cadastro_menu.add_command(label="Voltar", command=self.hide_client_form)
 
-        # Criar o submenu "Pedido"
+        # Exemplo de criação o submenu "Pedido"
         self.pedido_menu = tk.Menu(self.menubar)
         self.menubar.add_cascade(label="Pedido", menu=self.pedido_menu)
         self.pedido_menu.add_command(label="Pedidos", command=self.show_order_form)
         self.pedido_menu.add_command(label="Voltar", command=self.hide_order_form)
 
-        # Criar o submenu "Relatórios"
-        self.relatorio_menu = tk.Menu(self.menubar)
-        self.menubar.add_cascade(label="Relatórios", menu=self.relatorio_menu)
-        self.relatorio_menu.add_command(label="Gerar Relatório", command=self.generate_report)
-
-        # Criar o submenu "Sair"
+        # Exemplo de criação o submenu "Sair"
         self.menubar.add_command(label="Sair", command=self.quit)
 
         # Inicializar as janelas de cadastro
@@ -62,62 +56,12 @@ class PizzariaTech(tk.Tk):
             self.order_form.grid_forget()
             self.order_form = None
 
-    def generate_report(self):
-        # Perguntar ao usuário onde salvar o relatório
-        directory = filedialog.askdirectory(title="Onde esse relatório deve ser salvo?")
-        if not directory:
-            return
-
-        try:
-            # Conectar ao banco de dados
-            cnx = mysql.connector.connect(
-                host='127.0.0.1',
-                user='root',
-                password='',
-                database='pizzasnachtech'
-            )
-            cursor = cnx.cursor()
-
-            # Obter dados dos clientes
-            cursor.execute("SELECT cliente_id, email, nome, endereco, telefone FROM clientes")
-            clientes = cursor.fetchall()
-
-            # Obter dados dos pedidos
-            cursor.execute("SELECT pedido_id, cliente_id, data_hora_pedido, forma_pagamento, status FROM pedidos")
-            pedidos = cursor.fetchall()
-
-            cursor.close()
-            cnx.close()
-
-            # Criar um relatório em Excel
-            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            filename = os.path.join(directory, f"Relatorio_{timestamp}.xlsx")
-            workbook = xlsxwriter.Workbook(filename)
-
-            # Adicionar planilha de clientes
-            worksheet_clients = workbook.add_worksheet('Clientes')
-            worksheet_clients.write_row(0, 0, ['ID', 'E-mail', 'Nome', 'Endereço', 'Telefone'])
-            for row_num, row_data in enumerate(clientes, 1):
-                worksheet_clients.write_row(row_num, 0, row_data)
-
-            # Adicionar planilha de pedidos
-            worksheet_orders = workbook.add_worksheet('Pedidos')
-            worksheet_orders.write_row(0, 0, ['Pedido ID', 'Cliente ID', 'Data/Hora', 'Forma de Pagamento', 'Status'])
-            for row_num, row_data in enumerate(pedidos, 1):
-                worksheet_orders.write_row(row_num, 0, row_data)
-
-            workbook.close()
-
-            messagebox.showinfo("Sucesso", "Relatório gerado com sucesso!")
-        except mysql.connector.Error as err:
-            messagebox.showerror("Erro de Banco de Dados", f"Erro: {err}")
-
 class ClientForm(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
         self.master = master
 
-        # Criar labels e entrys para os campos de entrada
+        # Exemplo de criação labels e entrys para os campos de entrada
         self.email_label = tk.Label(self, text="E-mail:")
         self.email_label.grid(row=0, column=0, padx=10, pady=10)
         self.email_entry = tk.Entry(self, width=40)
@@ -141,21 +85,19 @@ class ClientForm(tk.Frame):
         # Botões
         self.save_button = tk.Button(self, text="Salvar", command=self.save_client)
         self.save_button.grid(row=4, column=0, padx=10, pady=10)
-        self.new_button = tk.Button(self, text="Adicionar Novo Cliente", command=self.save_client_and_clear)
-        self.new_button.grid(row=4, column=1, padx=10, pady=10)
         self.back_button = tk.Button(self, text="Voltar", command=self.master.hide_client_form)
-        self.back_button.grid(row=4, column=2, padx=10, pady=10)
+        self.back_button.grid(row=4, column=1, padx=10, pady=10)
 
         # Tabela para exibir os clientes cadastrados
         self.client_table = ttk.Treeview(self, columns=("cliente_id", "email", "nome", "endereco", "telefone"), show="headings")
-        self.client_table.grid(row=5, column=0, columnspan=3, padx=10, pady=10, sticky="nsew")
+        self.client_table.grid(row=5, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
         self.client_table.heading("cliente_id", text="ID")
         self.client_table.heading("email", text="E-mail")
         self.client_table.heading("nome", text="Nome")
         self.client_table.heading("endereco", text="Endereço")
         self.client_table.heading("telefone", text="Telefone")
 
-        # Carregar dados do banco de dados
+        # Carregando dados do banco de dados
         self.load_data()
 
     def save_client(self):
@@ -164,7 +106,7 @@ class ClientForm(tk.Frame):
             messagebox.showerror("Erro", "Preencha todos os campos!")
             return
 
-        # Criar um novo cliente com os dados inseridos
+        # A criação um novo cliente com os dados inseridos
         client = {
             "email": self.email_entry.get(),
             "nome": self.nome_entry.get(),
@@ -199,14 +141,6 @@ class ClientForm(tk.Frame):
         except mysql.connector.Error as err:
             messagebox.showerror("Erro de Banco de Dados", f"Erro: {err}")
 
-    def save_client_and_clear(self):
-        self.save_client()
-        # Limpar os campos de entrada para novo cliente
-        self.email_entry.delete(0, tk.END)
-        self.nome_entry.delete(0, tk.END)
-        self.endereco_entry.delete(0, tk.END)
-        self.telefone_entry.delete(0, tk.END)
-
     def load_data(self):
         try:
             # Conectar ao banco de dados
@@ -222,6 +156,7 @@ class ClientForm(tk.Frame):
             cursor.close()
             cnx.close()
 
+            # Adicionar dados à tabela
             for cliente in clientes:
                 self.client_table.insert("", "end", values=cliente)
         except mysql.connector.Error as err:
@@ -232,21 +167,21 @@ class OrderForm(tk.Frame):
         super().__init__(master)
         self.master = master
 
-        # Criar labels e entrys para os campos de entrada
-        self.cliente_id_label = tk.Label(self, text="Cliente ID:")
-        self.cliente_id_label.grid(row=0, column=0, padx=10, pady=10)
-        self.cliente_id_entry = ttk.Combobox(self, width=40)
-        self.cliente_id_entry.grid(row=0, column=1, padx=10, pady=10)
-        
-        self.data_hora_pedido_label = tk.Label(self, text="Data/Hora do Pedido:")
-        self.data_hora_pedido_label.grid(row=1, column=0, padx=10, pady=10)
-        self.data_hora_pedido_entry = tk.Entry(self, width=40)
-        self.data_hora_pedido_entry.grid(row=1, column=1, padx=10, pady=10)
+        # Exemplo de criação labels e entrys para os campos de entrada
+        self.client_id_label = tk.Label(self, text="Cliente ID:")
+        self.client_id_label.grid(row=0, column=0, padx=10, pady=10)
+        self.client_id_entry = tk.Entry(self, width=40)
+        self.client_id_entry.grid(row=0, column=1, padx=10, pady=10)
 
-        self.forma_pagamento_label = tk.Label(self, text="Forma de Pagamento:")
-        self.forma_pagamento_label.grid(row=2, column=0, padx=10, pady=10)
-        self.forma_pagamento_entry = tk.Entry(self, width=40)
-        self.forma_pagamento_entry.grid(row=2, column=1, padx=10, pady=10)
+        self.datetime_label = tk.Label(self, text="Data/Hora do Pedido:")
+        self.datetime_label.grid(row=1, column=0, padx=10, pady=10)
+        self.datetime_entry = tk.Entry(self, width=40)
+        self.datetime_entry.grid(row=1, column=1, padx=10, pady=10)
+
+        self.payment_label = tk.Label(self, text="Forma de Pagamento:")
+        self.payment_label.grid(row=2, column=0, padx=10, pady=10)
+        self.payment_entry = tk.Entry(self, width=40)
+        self.payment_entry.grid(row=2, column=1, padx=10, pady=10)
 
         self.status_label = tk.Label(self, text="Status:")
         self.status_label.grid(row=3, column=0, padx=10, pady=10)
@@ -256,56 +191,32 @@ class OrderForm(tk.Frame):
         # Botões
         self.save_button = tk.Button(self, text="Salvar", command=self.save_order)
         self.save_button.grid(row=4, column=0, padx=10, pady=10)
-        self.new_button = tk.Button(self, text="Adicionar Novo Pedido", command=self.save_order_and_clear)
-        self.new_button.grid(row=4, column=1, padx=10, pady=10)
         self.back_button = tk.Button(self, text="Voltar", command=self.master.hide_order_form)
-        self.back_button.grid(row=4, column=2, padx=10, pady=10)
+        self.back_button.grid(row=4, column=1, padx=10, pady=10)
 
         # Tabela para exibir os pedidos cadastrados
-        self.order_table = ttk.Treeview(self, columns=("pedido_id", "cliente_id", "data_hora_pedido", "forma_pagamento", "status"), show="headings")
-        self.order_table.grid(row=5, column=0, columnspan=3, padx=10, pady=10, sticky="nsew")
+        self.order_table = ttk.Treeview(self, columns=("pedido_id", "cliente_id", "datetime", "payment", "status"), show="headings")
+        self.order_table.grid(row=5, column=0, columnspan=2, padx=10, pady=10, sticky="nsew")
         self.order_table.heading("pedido_id", text="Pedido ID")
         self.order_table.heading("cliente_id", text="Cliente ID")
-        self.order_table.heading("data_hora_pedido", text="Data/Hora do Pedido")
-        self.order_table.heading("forma_pagamento", text="Forma de Pagamento")
+        self.order_table.heading("datetime", text="Data/Hora")
+        self.order_table.heading("payment", text="Forma de Pagamento")
         self.order_table.heading("status", text="Status")
 
         # Carregar dados do banco de dados
-        self.load_clients()
         self.load_data()
-
-    def load_clients(self):
-        try:
-            # Conectar ao banco de dados
-            cnx = mysql.connector.connect(
-                host='127.0.0.1',
-                user='root',
-                password='',
-                database='pizzasnachtech'
-            )
-            cursor = cnx.cursor()
-            cursor.execute("SELECT cliente_id, nome FROM clientes")
-            clientes = cursor.fetchall()
-            cursor.close()
-            cnx.close()
-
-            client_dict = {str(cliente[0]): cliente[1] for cliente in clientes}
-            self.cliente_id_entry['values'] = list(client_dict.keys())
-            self.client_dict = client_dict
-        except mysql.connector.Error as err:
-            messagebox.showerror("Erro de Banco de Dados", f"Erro: {err}")
 
     def save_order(self):
         # Verificar se os campos foram preenchidos
-        if not self.cliente_id_entry.get() or not self.data_hora_pedido_entry.get() or not self.forma_pagamento_entry.get() or not self.status_entry.get():
+        if not self.client_id_entry.get() or not self.datetime_entry.get() or not self.payment_entry.get() or not self.status_entry.get():
             messagebox.showerror("Erro", "Preencha todos os campos!")
             return
 
-        # Criar um novo pedido com os dados inseridos
+        # Exemplo de criação um novo pedido com os dados inseridos
         order = {
-            "cliente_id": self.cliente_id_entry.get(),
-            "data_hora_pedido": self.data_hora_pedido_entry.get(),
-            "forma_pagamento": self.forma_pagamento_entry.get(),
+            "cliente_id": self.client_id_entry.get(),
+            "datetime": self.datetime_entry.get(),
+            "payment": self.payment_entry.get(),
             "status": self.status_entry.get()
         }
 
@@ -319,28 +230,22 @@ class OrderForm(tk.Frame):
             )
             cursor = cnx.cursor()
             cursor.execute("INSERT INTO pedidos (cliente_id, data_hora_pedido, forma_pagamento, status) VALUES (%s, %s, %s, %s)",
-                           (order["cliente_id"], order["data_hora_pedido"], order["forma_pagamento"], order["status"]))
+                           (order["cliente_id"], order["datetime"], order["payment"], order["status"]))
             cnx.commit()
-            order_id = cursor.lastrowid
+            pedido_id = cursor.lastrowid
             cursor.close()
             cnx.close()
 
             # Adicionar o pedido à tabela
-            self.order_table.insert("", "end", values=(order_id, order["cliente_id"], order["data_hora_pedido"], order["forma_pagamento"], order["status"]))
+            self.order_table.insert("", "end", values=(pedido_id, order["cliente_id"], order["datetime"], order["payment"], order["status"]))
 
             # Limpar os campos de entrada
-            self.data_hora_pedido_entry.delete(0, tk.END)
-            self.forma_pagamento_entry.delete(0, tk.END)
+            self.client_id_entry.delete(0, tk.END)
+            self.datetime_entry.delete(0, tk.END)
+            self.payment_entry.delete(0, tk.END)
             self.status_entry.delete(0, tk.END)
         except mysql.connector.Error as err:
             messagebox.showerror("Erro de Banco de Dados", f"Erro: {err}")
-
-    def save_order_and_clear(self):
-        self.save_order()
-        # Limpar os campos de entrada para novo pedido
-        self.data_hora_pedido_entry.delete(0, tk.END)
-        self.forma_pagamento_entry.delete(0, tk.END)
-        self.status_entry.delete(0, tk.END)
 
     def load_data(self):
         try:
@@ -357,6 +262,7 @@ class OrderForm(tk.Frame):
             cursor.close()
             cnx.close()
 
+            # Adicionar dados à tabela
             for pedido in pedidos:
                 self.order_table.insert("", "end", values=pedido)
         except mysql.connector.Error as err:
@@ -366,13 +272,15 @@ if __name__ == "__main__":
     app = PizzariaTech()
     app.mainloop()
 
+    # def strftime para hora atual
+    # xlxwriter,workbook 
 
 
 ################## DOCS Documentação do Código PizzariaTech
 # 1. Visão Geral
 # O projeto PizzariaTech é uma aplicação de desktop desenvolvida em Python utilizando a biblioteca Tkinter para a interface gráfica. Ele gerencia o cadastro de clientes, pedidos e geração de relatórios em formato Excel. Além disso, utiliza MySQL como banco de dados para armazenar e recuperar informações dos clientes e pedidos.
 
-# 2. Estrutura do Código
+# 2. Estrutura do Código:
 # O código está organizado em três classes principais:
 
 # PizzariaTech
@@ -410,29 +318,34 @@ if __name__ == "__main__":
 # save_order(): Salva um novo pedido no banco de dados.
 # load_data(): Carrega os dados dos pedidos do banco de dados.
 # Outros métodos para interação com o banco de dados e interface gráfica.
-# 3. Funcionalidades
+
+# 3. Funcionalidades:
+
 # Cadastro de Clientes: Permite inserir, visualizar e salvar clientes no banco de dados MySQL.
 # Cadastro de Pedidos: Permite inserir, visualizar e salvar pedidos no banco de dados MySQL.
 # Geração de Relatórios: Permite gerar um relatório em Excel com os dados de clientes e pedidos, com a opção de escolher o diretório de destino.
-# 4. Requisitos
+
+# 4. Requisitos:
+
 # Python 3.x
 # Bibliotecas: tkinter, tkinter.ttk, mysql-connector-python, xlsxwriter
-# 5. Utilização
+
+# 5. Utilização:
+
 # Execute o arquivo PizzariaTech.py.
 # Utilize o menu principal para navegar entre as funcionalidades.
 # Preencha os formulários de clientes e pedidos e salve os registros.
 # Gere relatórios em Excel através do menu de relatórios.
-# 6. Limitações
+
+# 6. Limitações:
+
 # Não há tratamento avançado de exceções ou validações específicas nos formulários.
+
 # # A aplicação assume conexão local com o MySQL e pode necessitar de ajustes para conexões remotas ou em ambientes diferentes.
-# # 7. Melhorias Futuras
+
+# # 7. Melhorias Futuras:
+
 # # Implementação de validações de entrada mais robustas.
 # # Melhoria na interface gráfica com uso de estilos e temas.
 # # Suporte a múltiplos usuários e permissões de acesso.
 # # Esta documentação fornece uma visão geral clara do código e suas funcionalidades, ajudando a entender sua estrutura e propósito.
-
-
-
-
-
-
