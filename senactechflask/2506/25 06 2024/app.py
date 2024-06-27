@@ -33,3 +33,17 @@ if __name__ == '__main__':
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+#     pip install Flask-WTF
+
+# Lucas Matheus Peres Morais
+# 21:12
+# pip install Flask-WTF[email]
+
+# Lucas Matheus Peres Morais
+# 21:12
+# pip install Flask-FlashMessages
+
+# Lucas Matheus Peres Morais
+# 21:13
+# pip install mysql-connector
