@@ -2,7 +2,7 @@ from typing import NotRequired#Esta linha importa o tipo NotRequired do módulo 
 from flask import Flask, redirect, render_template, request#Esta linha importa várias funções do módulo flask:Flask: Esta função é usada para criar uma instância de aplicativo Flask.redirect: Esta função é usada para redirecionar um usuário para uma URL diferente.render_template: Esta função é usada para renderizar um arquivo de modelo com dados.request: Este objeto fornece acesso às informações da solicitação web atual, como dados de formulário, cabeçalhos e cookies.
 from flask_wtf import FlaskForm#Esta linha importa a classe FlaskForm do módulo flask_wtf. Esta classe é a classe base para criar formulários em aplicativos Flask que usam WTForms para validação e proteção CSRF.
 from wtforms import StringField, EmailField, PasswordField, validators#Esta linha importa várias classes de campo de formulário e o módulo validators da biblioteca wtforms:StringField: Esta classe é usada para criar um campo de entrada de texto.EmailField: Esta classe é usada para criar um campo de entrada de email com validação básica de email.PasswordField: Esta classe é usada para criar um campo de entrada de senha que oculta os caracteres à medida que são digitados.validators: Este módulo fornece vários validadores que podem ser usados para verificar o formato, o comprimento e outras propriedades dos dados do formulário.
-from base_conectividade_config import conecta_no_banco_de_dados#Esta linha importa a função conecta_no_banco_de_dados.
+from base_bd_config import conecta_no_banco_de_dados#Esta linha importa a função conecta_no_banco_de_dados.
 
 
 app = Flask(__name__)
@@ -46,7 +46,7 @@ class FormularioContato(FlaskForm):
 # Cria um cursor para executar comandos SQL.
 # Constrói a instrução SQL INSERT para inserir os dados do formulário na tabela contatados do banco de dados.
 # Executa a instrução SQL usando o cursor.
-# Confirma as alterações no banco de dados usando conectividade.commit().
+# Confirma as alterações no banco de dados usando bd.commit().
 # Imprime uma mensagem de sucesso no console.
 # Redireciona o usuário para a rota /sucesso usando redirect('/sucesso').
 # Se a conexão com o banco de dados falhar:
@@ -93,7 +93,7 @@ def contato():
             # A instrução SQL INSERT é construída na variável sql para inserir os dados do formulário na tabela contatados. A instrução utiliza marcadores de posição (%s) para os valores a serem inseridos.
             # Os valores extraídos do formulário são armazenados em uma tupla values na ordem correspondente aos marcadores de posição na instrução SQL.
             # O comando cursor.execute(sql, values) executa a instrução SQL, inserindo os dados do formulário na tabela.
-            # A função conectividade.commit() é chamada para confirmar as alterações feitas no banco de dados.
+            # A função bd.commit() é chamada para confirmar as alterações feitas no banco de dados.
             # Uma mensagem de sucesso informando que os dados foram salvos é impressa no console.
             
         except conectividade.connector.Error as err:
@@ -102,16 +102,16 @@ def contato():
             mensagem_erro = "Ocorreu um erro ao processar o seu contato. Tente novamente mais tarde."
             return render_template('erro.html', mensagem_erro=mensagem_erro), 500
             # O bloco try...except tenta executar o código de gravação no banco de dados.
-            # Se a exceção conectividade.connector.Error for lançada, significa que ocorreu um erro durante a interação com o banco de dados.
+            # Se a exceção bd.connector.Error for lançada, significa que ocorreu um erro durante a interação com o banco de dados.
             # A mensagem de erro é capturada na variável err e impressa no console para fins de depuração.
             # Uma mensagem de erro genérica informando que houve um problema ao processar o contato é definida em mensagem_erro.
             # A função render_template('erro.html', mensagem_erro=mensagem_erro) renderiza a página erro.html e passa a mensagem de erro como contexto.
             # O código retorna um código de status HTTP 500, indicando um erro interno do servidor.
         finally:
-            if conectividade is not None:
-                conectividade.close()
+            if bd is not None:
+                bd.close()
                 # O bloco finally é executado independentemente do sucesso ou falha da gravação no banco de dados.
-                # A linha if conectividade is not None: verifica se a variável conectividade (referência à conexão com o banco de dados) não é None.
+                # A linha if bd is not None: verifica se a variável bd (referência à conexão com o banco de dados) não é None.
                 # Se a conexão ainda estiver ativa, o método close() é chamado para fechá-la e liberar os recursos. 
         return redirect('/sucesso')
         #Se a gravação no banco de dados for bem-sucedida, a linha return redirect('/sucesso') redireciona o usuário para a rota /sucesso, que provavelmente renderiza uma página de confirmação de envio.
