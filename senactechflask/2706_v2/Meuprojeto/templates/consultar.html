@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Contatos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    {% if contatos %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Mensagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contato in contatos %}
+            <tr>
+                <td>{{ contato[1] }}</td> <!-- Assumindo que o nome está na segunda coluna -->
+                <td>{{ contato[2] }}</td> <!-- Assumindo que o email está na terceira coluna -->
+                <td>{{ contato[3] }}</td> <!-- Assumindo que a mensagem está na quarta coluna -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Nenhum contato encontrado.</p>
+    {% endif %}
+</body>
+</html>

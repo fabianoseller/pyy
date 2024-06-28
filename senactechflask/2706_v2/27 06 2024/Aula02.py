@@ -147,7 +147,7 @@ def erro_geral(erro):
 @app.route('/contatos')
 def pagina_Contatos():
     bd =conecta_no_banco_de_dados()
-    cursor = conectividade.cursor()
+    cursor = bd.cursor()
     cursor.execute('SELECT * FROM contatos')
     contatos = cursor.fetchall()
     return render_template("contatos.html", contatos=contatos)
