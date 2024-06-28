@@ -47,3 +47,5 @@ def about():
 # Lucas Matheus Peres Morais
 # 21:13
 # pip install mysql-connector
+
+################### mudar tudo para portugues ##################
