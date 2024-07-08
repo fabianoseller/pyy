@@ -1,3 +1,8 @@
+import mysql.connector
+
+def conecta_no_banco_de_dados():
+    cnx = mysql.connector.connect(host='127.0.0.1',user='root',password='')
+
 def criar_banco_de_dados():
     conectacao = None
     cursor = None
