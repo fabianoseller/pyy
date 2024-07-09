@@ -43,21 +43,39 @@ def criar_banco_de_dados():
         cursor.execute('USE pythonbas;')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS contatos (
-                id INT AUTO_INCREMENT PRIMARY KEY,
+                contatos_id INT AUTO_INCREMENT PRIMARY KEY,
                 nome VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL,
                 mensagem TEXT NOT NULL
             );
-        ''')
+                       
+                ''')
+                    
+                       
+            
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
-                id INT AUTO_INCREMENT PRIMARY KEY,
+                users_id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(255) NOT NULL,
                 password VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL
             );
-        ''')
-        conexao.commit()
+                       
+                        ''')
+
+        # # Criar a tabela user_contatos com as relações especificadas
+        # cursor.execute('''
+        #     CREATE TABLE IF NOT EXISTS user_contatos (
+        #         users_id INT NOT NULL,
+        #         contatos_id INT NOT NULL,
+        #         situacao VARCHAR(255) NOT NULL,
+        #         PRIMARY KEY (users_id, contatos_id),
+        #         FOREIGN KEY (users_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+        #         FOREIGN KEY (contatos_id) REFERENCES contatos(id) ON DELETE CASCADE
+        #     );
+                       
+        # ''')
+        # conexao.commit()
     except mysql.connector.Error as err:
         print("Erro ao criar o banco de dados ou tabelas:", err)
         raise
@@ -155,7 +173,7 @@ def contato():
             # Essa função, é responsável por lidar com os detalhes da conexão.
             
             cursor = bd.cursor()
-            sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (%s, %s, %s)"
+            sql = "INSERT INTO contatos (contatos_id,  nome, email, mensagem) VALUES (%s, %s, %s, %s)"
             values = (nome, email, mensagem)
             cursor.execute(sql, values)
             bd.commit()
@@ -195,30 +213,31 @@ def contato():
         return render_template('contato.html', form=form)
         #Se o formulário não foi submetido ou a validação falhou, a linha return render_template('contato.html', form=form) renderiza
 
-# def contato():
-#     form = FormularioContato()
-#     if form.validate_on_submit():
-#         nome = form.nome.data
-#         email = form.email.data
-#         mensagem = form.mensagem.data    
-#         try:
-#             conexao = conecta_no_banco_de_dados()
-#             cursor = conexao.cursor()
-#             sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (%s, %s, %s)"
-#             values = (nome, email, mensagem)
-#             cursor.execute(sql, values)
-#             conexao.commit()
-#             print("Dados do formulário salvos com sucesso!")
-#         except mysql.connector.Error as err:
-#             print(f"Erro ao salvar dados no banco de dados: {err}")
-#             mensagem_erro = "Ocorreu um erro ao processar o seu contato. Tente novamente mais tarde."
-#             return render_template('erro.html', mensagem_erro=mensagem_erro), 500
-#         finally:
-#             if conexao.is_connected():
-#                 cursor.close()
-#                 conexao.close()
-#                 return redirect('/sucesso')
-#     else:
+def contato():
+   form = FormularioContato()
+   if form.validate_on_submit():
+       nome = form.nome.data
+       email = form.email.data
+       mensagem = form.mensagem.data    
+try:
+           conexao = conecta_no_banco_de_dados()
+           cursor = conexao.cursor()
+           sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (%s, %s, %s)"
+           values = (nome, email, mensagem)
+           cursor.execute(sql, values)
+           conexao.commit()
+           print("Dados do formulário salvos com sucesso!")
+except mysql.connector.Error as err:
+            print(f"Erro ao salvar dados no banco de dados: {err}")
+            mensagem_erro = "Ocorreu um erro ao processar o seu contato. Tente novamente mais tarde."
+           
+finally:
+           
+            if conexao.is_connected():
+               cursor.close()
+               conexao.close()
+            #
+# else:
 #         return render_template('contato.html', form=form)
 #         #Se o formulário não foi submetido ou a validação falhou, a linha return render_template('contato.html', form=form) renderiza        
                
