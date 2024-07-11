@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, url_for
+from p redirect, render_template, request, session, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, PasswordField, validators
 import mysql.connector
