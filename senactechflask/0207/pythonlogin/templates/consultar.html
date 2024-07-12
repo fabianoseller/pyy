@@ -9,6 +9,7 @@ Consultar
 <table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Mensagem</th>
@@ -17,9 +18,10 @@ Consultar
     <tbody>
         {% for contato in contatos %}
         <tr>
-            <td>{{ contato[1] }}</td>
-            <td>{{ contato[2] }}</td>
-            <td>{{ contato[3] }}</td>
+            <td>{{ contato.id }}</td>
+            <td>{{ contato.nome }}</td>
+            <td>{{ contato.email }}</td>
+            <td>{{ contato.mensagem }}</td>
         </tr>
         {% endfor %}
     </tbody>

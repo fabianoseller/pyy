@@ -21,6 +21,7 @@
 
         <main class="screen-1">
             <h2>Bem-vindo, {{ username }}!</h2>
+            
             <h3>Suas mensagens:</h3>
             {% if messages %}
                 <ul class="message-list">
@@ -34,6 +35,72 @@
             {% else %}
                 <p>Você ainda não enviou nenhuma mensagem.</p>
             {% endif %}
+
+            <h3>Todos os Usuários:</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Todos os Contatos:</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Mensagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contato in contatos %}
+                    <tr>
+                        <td>{{ contato.id }}</td>
+                        <td>{{ contato.nome }}</td>
+                        <td>{{ contato.email }}</td>
+                        <td>{{ contato.mensagem }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Relação Usuários-Contatos:</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Usuário ID</th>
+                        <th>Username</th>
+                        <th>Contato ID</th>
+                        <th>Nome do Contato</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for uc in user_contatos %}
+                    <tr>
+                        <td>{{ uc.usuario_id }}</td>
+                        <td>{{ uc.username }}</td>
+                        <td>{{ uc.contato_id }}</td>
+                        <td>{{ uc.nome }}</td>
+                        <td>{{ uc.situacao }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </main>
 
         <footer>
@@ -42,3 +109,4 @@
     </div>
 </body>
 </html>
+// tetste 

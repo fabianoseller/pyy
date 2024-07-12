@@ -183,34 +183,25 @@ def consultar():
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
                 
-                # Query users
-                cursor.execute('SELECT id, username, email FROM users')
+                # Consulta usuários
+                cursor.execute('SELECT users_id, username, email FROM users')
                 users = cursor.fetchall()
                 
-                # Query contacts
-                cursor.execute('SELECT * FROM contatos')
+                # Consulta contatos
+                cursor.execute('SELECT contatos_id, nome, email, mensagem FROM contatos')
                 contatos = cursor.fetchall()
                 
-                # Query user-contacts relationship
+                # Consulta relação user_contatos
                 cursor.execute('''
-                    SELECT uc.users_id AS usuario_id, u.username, 
-                           uc.contatos_id AS contato_id, c.nome, uc.situacao
+                    SELECT uc.users_id, u.username, 
+                           uc.contatos_id, c.nome, uc.situacao
                     FROM user_contatos uc
-                    JOIN users u ON uc.users_id = u.id
-                    JOIN contatos c ON uc.contatos_id = c.id
+                    JOIN users u ON uc.users_id = u.users_id
+                    JOIN contatos c ON uc.contatos_id = c.contatos_id
                 ''')
                 user_contatos = cursor.fetchall()
                 
-                # Query messages for the logged-in user
-                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
-                user_messages = cursor.fetchall()
-                
-            return render_template("dashboard.html", 
-                                   username=session['username'], 
-                                   messages=user_messages,
-                                   users=users, 
-                                   contatos=contatos, 
-                                   user_contatos=user_contatos)
+            return render_template("consultar.html", users=users, contatos=contatos, user_contatos=user_contatos)
         except Exception as e:
             logging.error(f"Erro ao consultar dados: {e}")
             return render_template('erro.html', mensagem_erro=str(e)), 500
@@ -268,4 +259,4 @@ def erro_geral(erro):
 
 if __name__ == '__main__':
     criar_banco_de_dados()
-    app.run(debug=False)
+    app.run(debug=True)
