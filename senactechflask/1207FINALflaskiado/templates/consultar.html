@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Conteúdo específico da página aqui -->
+{% endblock %}
+<h2>Consultar Contatos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Mensagem</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contato in contatos %}
+        <tr>
+            <td>{{ contato[1] }}</td>
+            <td>{{ contato[2] }}</td>
+            <td>{{ contato[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

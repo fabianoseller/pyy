@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sucesso</title>
+    <title>Sucesso - Sistema de Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .success-container {
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        .success-icon {
+            font-size: 64px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .success-message {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3d4785;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #2c3566;
+        }
+    </style>
 </head>
 <body>
-    <h2>Sucesso!</h2>
-    <p>Seu contato foi enviado com sucesso.</p>
-    <a href="{{ url_for('contato') }}">Voltar</a>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('contato') }}">Início</a></li>
+                    <li><a href="{{ url_for('register') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="success-container">
+            <div class="success-icon">&#10004;</div>
+            <h2 class="success-message">Mensagem enviada com sucesso!</h2>
+            <p>Obrigado por entrar em contato. Retornaremos em breve.</p>
+            <a href="{{ url_for('contato') }}" class="back-link">Voltar para a página inicial</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,27 +1,133 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Dados - Sistema de Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .data-container {
+            margin-bottom: 30px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #3d4785;
+            color: white;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .data-table tr:hover {
+            background-color: #ddd;
+        }
+        h2, h3 {
+            color: #3d4785;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('contato') }}">Início</a></li>
+                    <li><a href="{{ url_for('register') }}">Cadastrar</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                </ul>
+            </nav>
+        </header>
 
-{% block title %}
-Consultar
-{% endblock %}
+        <main class="screen-1">
+            <h2>Consulta de Dados</h2>
+            
+            <div class="data-container">
+                <h3>Usuários Cadastrados</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
-{% block content %}
-<h2>Consultar Contatos</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Mensagem</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contato in contatos %}
-        <tr>
-            <td>{{ contato[1] }}</td>
-            <td>{{ contato[2] }}</td>
-            <td>{{ contato[3] }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% endblock %}
+            <div class="data-container">
+                <h3>Contatos Cadastrados</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Mensagem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contato in contatos %}
+                        <tr>
+                            <td>{{ contato.id }}</td>
+                            <td>{{ contato.nome }}</td>
+                            <td>{{ contato.email }}</td>
+                            <td>{{ contato.mensagem }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="data-container">
+                <h3>Relação Usuários-Contatos</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Usuário ID</th>
+                            <th>Username</th>
+                            <th>Contato ID</th>
+                            <th>Nome do Contato</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for uc in user_contatos %}
+                        <tr>
+                            <td>{{ uc.usuario_id }}</td>
+                            <td>{{ uc.username }}</td>
+                            <td>{{ uc.contato_id }}</td>
+                            <td>{{ uc.nome }}</td>
+                            <td>{{ uc.situacao }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

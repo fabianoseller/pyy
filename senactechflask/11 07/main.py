@@ -3,41 +3,57 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, PasswordField, validators
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
+import logging
+from contextlib import contextmanager
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'uma-chave-secreta'
 
-# Função para conectar ao banco de dados
-def conecta_no_banco_de_dados():
+logging.basicConfig(filename='app.log', level=logging.ERROR)
+
+@contextmanager
+def get_db_connection():
+    connection = None
     try:
-        conexao = mysql.connector.connect(
+        connection = mysql.connector.connect(
             host='127.0.0.1',
             user='root',
             password='',
             database='pythonbas'
         )
-        return conexao
+        yield connection
     except mysql.connector.Error as err:
         if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
             criar_banco_de_dados()
-            return conecta_no_banco_de_dados()
+            connection = mysql.connector.connect(
+                host='127.0.0.1',
+                user='root',
+                password='',
+                database='pythonbas'
+            )
+            yield connection
         else:
-            print("Erro de conexão com o banco de dados:", err)
+            logging.error(f"Erro de conexão com o banco de dados: {err}")
             raise
+    finally:
+        if connection and connection.is_connected():
+            connection.close()
 
 def criar_banco_de_dados():
+    connection = None
+    cursor = None
     try:
-        conexao = mysql.connector.connect(
+        connection = mysql.connector.connect(
             host='127.0.0.1',
             user='root',
             password=''
         )
-        cursor = conexao.cursor()
+        cursor = connection.cursor()
         cursor.execute('CREATE DATABASE IF NOT EXISTS pythonbas;')
         cursor.execute('USE pythonbas;')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS contatos (
-                contatos_id INT AUTO_INCREMENT PRIMARY KEY,
+                id INT AUTO_INCREMENT PRIMARY KEY,
                 nome VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL,
                 mensagem TEXT NOT NULL
@@ -45,33 +61,31 @@ def criar_banco_de_dados():
         ''')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
-                users_id INT AUTO_INCREMENT PRIMARY KEY,
+                id INT AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(255) NOT NULL,
                 password VARCHAR(255) NOT NULL,
                 email VARCHAR(255) NOT NULL
             );
-                          ''')
-                       
-# Criar a tabela user_contatos com as relações especificadas
+        ''')
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS user_contatos (
                 users_id INT NOT NULL,
                 contatos_id INT NOT NULL,
                 situacao VARCHAR(255) NOT NULL,
                 PRIMARY KEY (contatos_id, users_id),
-                FOREIGN KEY (users_id) REFERENCES users(users_id) ON DELETE CASCADE,
-                FOREIGN KEY (contatos_id) REFERENCES contatos(contatos_id) ON DELETE CASCADE
+                FOREIGN KEY (users_id) REFERENCES users(id) ON DELETE CASCADE,
+                FOREIGN KEY (contatos_id) REFERENCES contatos(id) ON DELETE CASCADE
             );
-
         ''')
-        conexao.commit()
+        connection.commit()
     except mysql.connector.Error as err:
-        print("Erro ao criar o banco de dados ou tabelas:", err)
+        logging.error(f"Erro ao criar o banco de dados ou tabelas: {err}")
         raise
     finally:
-        if conexao.is_connected():
+        if cursor:
             cursor.close()
-            conexao.close()
+        if connection and connection.is_connected():
+            connection.close()
 
 class FormularioContato(FlaskForm):
     nome = StringField('Nome:', validators=[validators.DataRequired()])
@@ -83,8 +97,13 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password:', validators=[validators.DataRequired()])
 
 class RegisterForm(FlaskForm):
-    username = StringField('Username:', validators=[validators.DataRequired()])
-    password = PasswordField('Password:', validators=[validators.DataRequired()])
+    username = StringField('Username:', validators=[validators.DataRequired(), validators.Length(min=4, max=20)])
+    password = PasswordField('Password:', validators=[
+        validators.DataRequired(),
+        validators.Length(min=8),
+        validators.EqualTo('confirm', message='Passwords must match')
+    ])
+    confirm = PasswordField('Repeat Password', validators=[validators.DataRequired()])
     email = StringField('Email:', validators=[validators.DataRequired(), validators.Email()])
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -93,21 +112,21 @@ def login():
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
-        conexao = conecta_no_banco_de_dados()
-        cursor = conexao.cursor()
         try:
-            cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-            account = cursor.fetchone()
-            if account and check_password_hash(account[2], password):
-                session['loggedin'] = True
-                session['id'] = account[0]
-                session['username'] = account[1]
-                return redirect(url_for('contato'))
-            else:
-                return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
-        finally:
-            cursor.close()
-            conexao.close()
+            with get_db_connection() as connection:
+                cursor = connection.cursor(dictionary=True)
+                cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+                account = cursor.fetchone()
+                if account and check_password_hash(account['password'], password):
+                    session['loggedin'] = True
+                    session['id'] = account['id']
+                    session['username'] = account['username']
+                    return redirect(url_for('contato'))
+                else:
+                    return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao fazer login: {err}")
+            return render_template('erro.html', mensagem_erro="Erro ao processar o login"), 500
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -117,24 +136,19 @@ def register():
         username = form.username.data
         password = generate_password_hash(form.password.data)
         email = form.email.data
-        print(f"Tentando registrar usuário: {username}, {email}")
         try:
-            conexao = conecta_no_banco_de_dados()
-            cursor = conexao.cursor()
-            cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-            if cursor.fetchone() is not None:
-                print(f"Usuário {username} já existe.")
-                return render_template('register.html', form=form, msg='Esse usuário já existe')
-            cursor.execute('INSERT INTO users (username, password, email) VALUES (%s, %s, %s)', (username, password, email))
-            conexao.commit()
-            print(f"Usuário {username} registrado com sucesso.")
+            with get_db_connection() as connection:
+                cursor = connection.cursor()
+                cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+                if cursor.fetchone() is not None:
+                    return render_template('register.html', form=form, msg='Esse usuário já existe')
+                cursor.execute('INSERT INTO users (username, password, email) VALUES (%s, %s, %s)', 
+                               (username, password, email))
+                connection.commit()
             return redirect(url_for('login'))
         except mysql.connector.Error as err:
-            print(f"Erro ao registrar usuário: {err}")
+            logging.error(f"Erro ao registrar usuário: {err}")
             return render_template('register.html', form=form, msg='Erro ao registrar usuário')
-        finally:
-            cursor.close()
-            conexao.close()
     return render_template('register.html', form=form)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -143,56 +157,115 @@ def contato():
     if form.validate_on_submit():
         nome = form.nome.data
         email = form.email.data
-        mensagem = form.mensagem.data    
+        mensagem = form.mensagem.data
         try:
-            conexao = conecta_no_banco_de_dados()
-            cursor = conexao.cursor()
-            sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (%s, %s, %s)"
-            values = (nome, email, mensagem)
-            cursor.execute(sql, values)
-            conexao.commit()
-            print(f"Dados do formulário salvos com sucesso!")
+            with get_db_connection() as connection:
+                cursor = connection.cursor()
+                sql = "INSERT INTO contatos (nome, email, mensagem) VALUES (%s, %s, %s)"
+                values = (nome, email, mensagem)
+                cursor.execute(sql, values)
+                connection.commit()
             return redirect('/sucesso')
         except mysql.connector.Error as err:
-            print(f"Erro ao salvar dados no banco de dados: {err}")
+            logging.error(f"Erro ao salvar dados no banco de dados: {err}")
             mensagem_erro = "Ocorreu um erro ao processar o seu contato. Tente novamente mais tarde."
             return render_template('erro.html', mensagem_erro=mensagem_erro), 500
-        finally:
-            cursor.close()
-            conexao.close()
     return render_template('contato.html', form=form)
 
 @app.route('/sucesso')
 def sucesso():
     return render_template('sucesso.html')
 
-@app.errorhandler(Exception)
-def erro_geral(erro):
-    mensagem_erro = str(erro)  
-    return render_template('erro.html', mensagem_erro=mensagem_erro), 500
-
 @app.route('/consultar')
 def consultar():
     if 'loggedin' in session:
         try:
-            conexao = conecta_no_banco_de_dados()
-            cursor = conexao.cursor()
-            cursor.execute('SELECT * FROM contatos')
-            contatos = cursor.fetchall()
-            return render_template("consultar.html", contatos=contatos)
+            with get_db_connection() as connection:
+                cursor = connection.cursor(dictionary=True)
+                
+                # Query users
+                cursor.execute('SELECT id, username, email FROM users')
+                users = cursor.fetchall()
+                
+                # Query contacts
+                cursor.execute('SELECT * FROM contatos')
+                contatos = cursor.fetchall()
+                
+                # Query user-contacts relationship
+                cursor.execute('''
+                    SELECT uc.users_id AS usuario_id, u.username, 
+                           uc.contatos_id AS contato_id, c.nome, uc.situacao
+                    FROM user_contatos uc
+                    JOIN users u ON uc.users_id = u.id
+                    JOIN contatos c ON uc.contatos_id = c.id
+                ''')
+                user_contatos = cursor.fetchall()
+                
+                # Query messages for the logged-in user
+                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
+                user_messages = cursor.fetchall()
+                
+            return render_template("dashboard.html", 
+                                   username=session['username'], 
+                                   messages=user_messages,
+                                   users=users, 
+                                   contatos=contatos, 
+                                   user_contatos=user_contatos)
         except Exception as e:
+            logging.error(f"Erro ao consultar dados: {e}")
             return render_template('erro.html', mensagem_erro=str(e)), 500
-        finally:
-            cursor.close()
-            conexao.close()
     else:
         return redirect(url_for('login'))
-
+    
+    @app.route('/login', methods=['GET', 'POST'])
+    def login():
+      form = LoginForm()
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+        try:
+            with get_db_connection() as connection:
+                cursor = connection.cursor(dictionary=True)
+                cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+                user = cursor.fetchone()
+                if user and check_password_hash(user['password'], password):
+                    session['loggedin'] = True
+                    session['id'] = user['id']
+                    session['username'] = user['username']
+                    return redirect(url_for('dashboard'))
+                else:
+                    return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao fazer login: {err}")
+            return render_template('erro.html', mensagem_erro="Erro ao processar o login"), 500
+    return render_template('login.html', form=form)
+    
+    
+    @app.route('/dashboard')
+    def dashboard():
+     if 'loggedin' in session:
+        try:
+            with get_db_connection() as connection:
+                cursor = connection.cursor(dictionary=True)
+                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
+                messages = cursor.fetchall()
+            return render_template('dashboard.html', username=session['username'], messages=messages)
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao buscar mensagens: {err}")
+            return render_template('erro.html', mensagem_erro="Erro ao buscar mensagens"), 500
+    return redirect(url_for('login'))
+    
+    
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('login'))
 
+@app.errorhandler(Exception)
+def erro_geral(erro):
+    logging.error(f"Erro não tratado: {str(erro)}")
+    return render_template('erro.html', mensagem_erro="Ocorreu um erro inesperado."), 500
+
 if __name__ == '__main__':
     criar_banco_de_dados()
-    app.run(debug=True)
+    app.run(debug=False)

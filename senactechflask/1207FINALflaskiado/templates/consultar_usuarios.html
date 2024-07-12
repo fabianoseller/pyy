@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Conteúdo específico da página aqui -->
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!--Estas linhas estão contidas dentro do elemento <head>, que fornece metadados sobre o documento que não são diretamente exibidos na página.-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <title>Consulta de Usuários</title>
+    </head>
+  
+
+<body>
+    <h2>Usuários Cadastrados</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.username }}</td>
+            <td>{{ usuario.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
