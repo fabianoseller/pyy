@@ -1,27 +1,29 @@
-{% extends 'layout.html' %}
+{% extends 'login.html' %}
 
 {% block title %}
-Consultar
+Consultar Relações Usuário-Contato
 {% endblock %}
 
 {% block content %}
-<h2>Consultar Contatos</h2>
+<h2>Consultar Relações Usuário-Contato</h2>
 <table>
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Mensagem</th>
+            <th>ID do Usuário</th>
+            <th>Nome do Usuário</th>
+            <th>ID do Contato</th>
+            <th>Nome do Contato</th>
+            <th>Situação</th>
         </tr>
     </thead>
     <tbody>
-        {% for contato in contatos %}
+        {% for uc in user_contatos %}
         <tr>
-            <td>{{ contato.contatos_id }}</td>
-            <td>{{ contato.nome }}</td>
-            <td>{{ contato.email }}</td>
-            <td>{{ contato.mensagem }}</td>
+            <td>{{ uc.users_id }}</td>
+            <td>{{ uc.username }}</td>
+            <td>{{ uc.contatos_id }}</td>
+            <td>{{ uc.nome }}</td>
+            <td>{{ uc.situacao }}</td>
         </tr>
         {% endfor %}
     </tbody>

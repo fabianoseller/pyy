@@ -116,12 +116,12 @@ def login():
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
                 cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-                account = cursor.fetchone()
-                if account and check_password_hash(account['password'], password):
+                user = cursor.fetchone()
+                if user and check_password_hash(user['password'], password):
                     session['loggedin'] = True
-                    session['id'] = account['id']
-                    session['username'] = account['username']
-                    return redirect(url_for('contato'))
+                    session['id'] = user['id']
+                    session['username'] = user['username']
+                    return render_template('sucesso.html', message="Login realizado com sucesso!")
                 else:
                     return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
         except mysql.connector.Error as err:
@@ -142,10 +142,10 @@ def register():
                 cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
                 if cursor.fetchone() is not None:
                     return render_template('register.html', form=form, msg='Esse usuário já existe')
-                cursor.execute('INSERT INTO users (username, password, email) VALUES (%s, %s, %s)', 
+                cursor.execute('INSERT INTO users (username, password, email) VALUES (%s, %s, %s)',
                                (username, password, email))
                 connection.commit()
-            return redirect(url_for('login'))
+            return render_template('sucesso.html', message="Cadastro realizado com sucesso!")
         except mysql.connector.Error as err:
             logging.error(f"Erro ao registrar usuário: {err}")
             return render_template('register.html', form=form, msg='Erro ao registrar usuário')
@@ -183,34 +183,40 @@ def consultar():
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
                 
-                # Consulta usuários
-                cursor.execute('SELECT users_id, username, email FROM users')
-                users = cursor.fetchall()
-                
-                # Consulta contatos
-                cursor.execute('SELECT contatos_id, nome, email, mensagem FROM contatos')
-                contatos = cursor.fetchall()
-                
-                # Consulta relação user_contatos
+                # Consulta na tabela user_contatos com informações relacionadas
                 cursor.execute('''
-                    SELECT uc.users_id, u.username, 
-                           uc.contatos_id, c.nome, uc.situacao
+                    SELECT uc.users_id, u.username, uc.contatos_id, c.nome, c.email, uc.situacao
                     FROM user_contatos uc
                     JOIN users u ON uc.users_id = u.users_id
                     JOIN contatos c ON uc.contatos_id = c.contatos_id
                 ''')
                 user_contatos = cursor.fetchall()
                 
-            return render_template("consultar.html", users=users, contatos=contatos, user_contatos=user_contatos)
+            return render_template("consultar.html", user_contatos=user_contatos)
         except Exception as e:
             logging.error(f"Erro ao consultar dados: {e}")
             return render_template('erro.html', mensagem_erro=str(e)), 500
     else:
         return redirect(url_for('login'))
     
-    @app.route('/login', methods=['GET', 'POST'])
-    def login():
-      form = LoginForm()
+    @app.route('/visualizer')
+    def visualizer():
+     if 'loggedin' in session:
+        try:
+            with get_db_connection() as connection:
+                cursor = connection.cursor(dictionary=True)
+                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
+                messages = cursor.fetchall()
+            return render_template('visualizer.html', username=session['username'], messages=messages)
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao buscar mensagens: {err}")
+            return render_template('erro.html', mensagem_erro="Erro ao buscar mensagens"), 500
+    return redirect(url_for('login'))
+    
+    
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
@@ -223,24 +229,22 @@ def consultar():
                     session['loggedin'] = True
                     session['id'] = user['id']
                     session['username'] = user['username']
-                    return redirect(url_for('dashboard'))
+                    return redirect(url_for('visualizer'))
                 else:
                     return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
         except mysql.connector.Error as err:
             logging.error(f"Erro ao fazer login: {err}")
             return render_template('erro.html', mensagem_erro="Erro ao processar o login"), 500
     return render_template('login.html', form=form)
-    
-    
-    @app.route('/dashboard')
-    def dashboard():
+    @app.route('/visualizer')
+    def visualizer():
      if 'loggedin' in session:
         try:
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
                 cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
                 messages = cursor.fetchall()
-            return render_template('dashboard.html', username=session['username'], messages=messages)
+            return render_template('visualizer.html', username=session['username'], messages=messages)
         except mysql.connector.Error as err:
             logging.error(f"Erro ao buscar mensagens: {err}")
             return render_template('erro.html', mensagem_erro="Erro ao buscar mensagens"), 500

@@ -54,8 +54,9 @@
 
         <main class="success-container">
             <div class="success-icon">&#10004;</div>
-            <h2 class="success-message">Mensagem enviada com sucesso!</h2>
-            <p>Obrigado por entrar em contato. Retornaremos em breve.</p>
+            <h2 class="success-message">Sucesso!</h2>
+            <p>{{ message }}</p>
+            <p>Redirecionando para o dashboard em 3 segundos...</p>
             <a href="{{ url_for('contato') }}" class="back-link">Voltar para a página inicial</a>
         </main>
 
@@ -63,5 +64,11 @@
             <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
         </footer>
     </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{{ url_for('dashboard') }}";
+        }, 3000);
+    </script>
 </body>
 </html>

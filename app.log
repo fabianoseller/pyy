@@ -589,3 +589,339 @@ INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:30] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:40:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:18] "[32mPOST / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:18] "GET /sucesso HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:22] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:24] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:41:24] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:23] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:42:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:07] "[32mPOST /register HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:07] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:43:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:44:36] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:44:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:44:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:45:51] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:45:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:45:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:39] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:48] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:53:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:18] "POST /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:39] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:55] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:58] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:54:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: Could not build url for endpoint 'dashboard'. Did you mean 'consultar' instead?
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:40] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:55:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:56:24] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:56:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:56:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:56:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:35] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:46] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:47] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:55] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:57] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:59] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:57:59] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:04] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:49] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'users_id' in 'field list'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:50] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 15:58:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:29] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:34] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:36] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:57] "[35m[1mGET /layout HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:05:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:13] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:13] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:28] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:08:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:17] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:24] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:37] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:09:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main3.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:32] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:35] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:53] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:13:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:56] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:57] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:49:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:05] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:17] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:50:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 273-556-264
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:18] "[35m[1mGET /visualizer HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+ERROR:root:Erro de conexão com o banco de dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+ERROR:root:Erro ao consultar dados: 1054 (42S22): Unknown column 'u.users_id' in 'on clause'
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:23] "[35m[1mGET /consultar HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+ERROR:root:Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [12/Jul/2024 16:57:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
