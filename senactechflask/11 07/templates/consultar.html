@@ -4,28 +4,64 @@
 Consultar Relações Usuário-Contato
 {% endblock %}
 
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
 {% block content %}
-<h2>Consultar Relações Usuário-Contato</h2>
-<table>
-    <thead>
-        <tr>
-            <th>ID do Usuário</th>
-            <th>Nome do Usuário</th>
-            <th>ID do Contato</th>
-            <th>Nome do Contato</th>
-            <th>Situação</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for uc in user_contatos %}
-        <tr>
-            <td>{{ uc.users_id }}</td>
-            <td>{{ uc.username }}</td>
-            <td>{{ uc.contatos_id }}</td>
-            <td>{{ uc.nome }}</td>
-            <td>{{ uc.situacao }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="container">
+    <header>
+        <h1>Sistema de Cadastro</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('contato') }}">Início</a></li>
+                <li><a href="{{ url_for('register') }}">Cadastrar</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="screen-1">
+        <h2>Consultar Relações Usuário-Contato</h2>
+        
+        {% if form %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.busca.label }} {{ form.busca() }}
+            {{ form.submit() }}
+        </form>
+        {% endif %}
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID do Usuário</th>
+                    <th>Nome do Usuário</th>
+                    <th>ID do Contato</th>
+                    <th>Nome do Contato</th>
+                    <th>Email do Contato</th>
+                    <th>Situação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for uc in user_contatos %}
+                <tr>
+                    <td>{{ uc.users_id }}</td>
+                    <td>{{ uc.username }}</td>
+                    <td>{{ uc.contatos_id }}</td>
+                    <td>{{ uc.nome }}</td>
+                    <td>{{ uc.email }}</td>
+                    <td>{{ uc.situacao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+    </footer>
+</div>
 {% endblock %}

@@ -1,6 +1,6 @@
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, PasswordField, validators
+from wtforms import StringField, TextAreaField, PasswordField, SubmitField, validators
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 import logging
@@ -106,28 +106,7 @@ class RegisterForm(FlaskForm):
     confirm = PasswordField('Repeat Password', validators=[validators.DataRequired()])
     email = StringField('Email:', validators=[validators.DataRequired(), validators.Email()])
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
-        try:
-            with get_db_connection() as connection:
-                cursor = connection.cursor(dictionary=True)
-                cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
-                user = cursor.fetchone()
-                if user and check_password_hash(user['password'], password):
-                    session['loggedin'] = True
-                    session['id'] = user['id']
-                    session['username'] = user['username']
-                    return render_template('sucesso.html', message="Login realizado com sucesso!")
-                else:
-                    return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
-        except mysql.connector.Error as err:
-            logging.error(f"Erro ao fazer login: {err}")
-            return render_template('erro.html', mensagem_erro="Erro ao processar o login"), 500
-    return render_template('login.html', form=form)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -176,38 +155,54 @@ def contato():
 def sucesso():
     return render_template('sucesso.html')
 
-@app.route('/consultar')
+
+
+class ConsultaForm(FlaskForm):
+    busca = StringField('Buscar')
+    submit = SubmitField('Consultar')
+
+@app.route('/consultar', methods=['GET', 'POST'])
 def consultar():
     if 'loggedin' in session:
+        form = ConsultaForm()
         try:
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
-                
-                # Consulta na tabela user_contatos com informações relacionadas
-                cursor.execute('''
-                    SELECT uc.users_id, u.username, uc.contatos_id, c.nome, c.email, uc.situacao
-                    FROM user_contatos uc
-                    JOIN users u ON uc.users_id = u.users_id
-                    JOIN contatos c ON uc.contatos_id = c.contatos_id
-                ''')
+                if form.validate_on_submit():
+                    busca = f"%{form.busca.data}%"
+                    cursor.execute('''
+                        SELECT uc.users_id, u.username, uc.contatos_id, c.nome, c.email, uc.situacao
+                        FROM user_contatos uc
+                        JOIN users u ON uc.users_id = u.id
+                        JOIN contatos c ON uc.contatos_id = c.id
+                        WHERE u.username LIKE %s OR c.nome LIKE %s
+                    ''', (busca, busca))
+                else:
+                    cursor.execute('''
+                        SELECT uc.users_id, u.username, uc.contatos_id, c.nome, c.email, uc.situacao
+                        FROM user_contatos uc
+                        JOIN users u ON uc.users_id = u.id
+                        JOIN contatos c ON uc.contatos_id = c.id
+                    ''')
                 user_contatos = cursor.fetchall()
-                
-            return render_template("consultar.html", user_contatos=user_contatos)
+            return render_template("consultar.html", user_contatos=user_contatos, form=form)
         except Exception as e:
             logging.error(f"Erro ao consultar dados: {e}")
             return render_template('erro.html', mensagem_erro=str(e)), 500
     else:
         return redirect(url_for('login'))
-    
-    @app.route('/visualizer')
-    def visualizer():
-     if 'loggedin' in session:
+
+
+
+@app.route('/dashboard')
+def dashboard():
+    if 'loggedin' in session:
         try:
             with get_db_connection() as connection:
                 cursor = connection.cursor(dictionary=True)
-                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE id = %s)', (session['id'],))
+                cursor.execute('SELECT * FROM contatos WHERE email = (SELECT email FROM users WHERE users_id = %s)', (session['id'],))
                 messages = cursor.fetchall()
-            return render_template('visualizer.html', username=session['username'], messages=messages)
+            return render_template('dashboard.html', username=session['username'], messages=messages)
         except mysql.connector.Error as err:
             logging.error(f"Erro ao buscar mensagens: {err}")
             return render_template('erro.html', mensagem_erro="Erro ao buscar mensagens"), 500
