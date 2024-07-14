@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Nova Mensagem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('visualizer') }}">Voltar para Mensagens</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="screen-1">
+            <h2>Inserir Nova Mensagem de Contato</h2>
+            <form method="POST" action="{{ url_for('inserir') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    {{ form.nome(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    {{ form.mensagem(class="form-control") }}
+                </div>
+                <button type="submit" class="btn">Inserir Contato</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

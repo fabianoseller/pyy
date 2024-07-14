@@ -3,104 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistema de Cadastro</title>
+    <title>Visualizar Mensagens</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Dashboard</h1>
+            <h1>Sistema de Cadastro</h1>
             <nav>
                 <ul>
-                    <li><a href="{{ url_for('contato') }}">Início</a></li>
                     <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                    <li><a href="{{ url_for('inserir') }}">Nova Mensagem</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main class="screen-1">
-            <h2>Bem-vindo, {{ username }}!</h2>
+        <main>
+            <h2>Mensagens de {{ username }}</h2>
             
-            <h3>Suas mensagens:</h3>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
             {% if messages %}
-                <ul class="message-list">
+                <div class="messages-grid">
+                    <div class="message-header">
+                        <div>Nome</div>
+                        <div>Email</div>
+                        <div>Mensagem</div>
+                        <div>Ações</div>
+                    </div>
                     {% for message in messages %}
-                        <li>
-                            <strong>Data:</strong> {{ message.data_envio }}<br>
-                            <strong>Mensagem:</strong> {{ message.mensagem }}
-                        </li>
+                        <div class="message-row">
+                            <div>{{ message.nome }}</div>
+                            <div>{{ message.email }}</div>
+                            <div>{{ message.mensagem }}</div>
+                            <div class="message-actions">
+                                <a href="{{ url_for('alterar', id=message.id) }}" class="btn btn-edit">Editar</a>
+                                <a href="{{ url_for('excluir', id=message.id) }}" class="btn btn-delete" onclick="return confirm('Tem certeza que deseja excluir esta mensagem?');">Excluir</a>
+                            </div>
+                        </div>
                     {% endfor %}
-                </ul>
+                </div>
+                
+                <div class="report-links">
+                    <a href="{{ url_for('gerar_relatorio_excel') }}" class="btn btn-primary">Gerar Relatório Excel</a>
+                    <a href="{{ url_for('gerar_relatorio_pdf') }}" class="btn btn-primary">Gerar Relatório PDF</a>
+                </div>
             {% else %}
-                <p>Você ainda não enviou nenhuma mensagem.</p>
+                <p>Nenhuma mensagem encontrada.</p>
             {% endif %}
-
-            <h3>Todos os Usuários:</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for user in users %}
-                    <tr>
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.username }}</td>
-                        <td>{{ user.email }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-            <h3>Todos os Contatos:</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Mensagem</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for contato in contatos %}
-                    <tr>
-                        <td>{{ contato.id }}</td>
-                        <td>{{ contato.nome }}</td>
-                        <td>{{ contato.email }}</td>
-                        <td>{{ contato.mensagem }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-
-            <h3>Relação Usuários-Contatos:</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Usuário ID</th>
-                        <th>Username</th>
-                        <th>Contato ID</th>
-                        <th>Nome do Contato</th>
-                        <th>Situação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for uc in user_contatos %}
-                    <tr>
-                        <td>{{ uc.usuario_id }}</td>
-                        <td>{{ uc.username }}</td>
-                        <td>{{ uc.contato_id }}</td>
-                        <td>{{ uc.nome }}</td>
-                        <td>{{ uc.situacao }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
         </main>
 
         <footer>
@@ -109,4 +66,3 @@
     </div>
 </body>
 </html>
-// tetste 
