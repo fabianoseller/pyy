@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Sistema de Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('contato') }}">Início</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="screen-1">
+            <h2>Cadastro de Novo Usuário/Contato</h2>
+            {% if msg %}
+            <p class="error-message">{{ msg }}</p>
+            {% endif %}
+            <form method="POST" action="{{ url_for('cadastrar') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    {{ form.username(class="form-control", placeholder="Digite seu username") }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ form.email(class="form-control", placeholder="Digite seu email") }}
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    {{ form.password(class="form-control", placeholder="Digite sua senha") }}
+                </div>
+                <div class="form-group">
+                    <label for="confirm">Confirme a Senha</label>
+                    {{ form.confirm(class="form-control", placeholder="Confirme sua senha") }}
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Cadastro</label>
+                    {{ form.tipo(class="form-control") }}
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+            <p class="login-link">Já tem uma conta? <a href="{{ url_for('login') }}">Faça login</a></p>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

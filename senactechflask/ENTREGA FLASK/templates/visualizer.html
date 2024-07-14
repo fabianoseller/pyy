@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Mensagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                    <li><a href="{{ url_for('inserir') }}">Nova Mensagem</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Mensagens de {{ username }}</h2>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            {% if messages %}
+                <div class="messages-grid">
+                    <div class="message-header">
+                        <div>Nome</div>
+                        <div>Email</div>
+                        <div>Mensagem</div>
+                        <div>Ações</div>
+                    </div>
+                    {% for message in messages %}
+                        <div class="message-row">
+                            <div>{{ message.nome }}</div>
+                            <div>{{ message.email }}</div>
+                            <div>{{ message.mensagem }}</div>
+                            <div class="message-actions">
+                                <a href="{{ url_for('alterar', id=message.id) }}" class="btn btn-edit">Editar</a>
+                                <a href="{{ url_for('excluir', id=message.id) }}" class="btn btn-delete" onclick="return confirm('Tem certeza que deseja excluir esta mensagem?');">Excluir</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="report-links">
+                    <a href="{{ url_for('gerar_relatorio_excel') }}" class="btn btn-primary">Gerar Relatório Excel</a>
+                    <a href="{{ url_for('gerar_relatorio_pdf') }}" class="btn btn-primary">Gerar Relatório PDF</a>
+                </div>
+            {% else %}
+                <p>Nenhuma mensagem encontrada.</p>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar e Criar Mensagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Cadastro</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                    <li><a href="{{ url_for('visualizer') }}">Minhas Mensagens</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="screen-1">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            
+            <h2>Criar Nova Mensagem</h2>
+            <form method="POST" action="{{ url_for('inserir') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    {{ form.nome(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    {{ form.mensagem(class="form-control") }}
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+
+            <h2>Consultar Minhas Mensagens</h2>
+            <form method="POST" action="{{ url_for('consultar') }}">
+                <input type="text" name="busca" placeholder="Buscar por nome ou email">
+                <button type="submit">Consultar</button>
+            </form>
+
+     
+                <tbody>
+                    {% for uc in user_contatos %}
+                    <tr>
+                        <td>{{ uc.contatos_id }}</td>
+                        <td>{{ uc.nome }}</td>
+                        <td>{{ uc.email }}</td>
+                        <td>{{ uc.mensagem }}</td>
+                        <td>{{ uc.situacao }}</td>
+                        <td>
+                            <a href="{{ url_for('alterar', id=uc.contatos_id) }}">Editar</a>
+                            <a href="{{ url_for('excluir', id=uc.contatos_id) }}" onclick="return confirm('Tem certeza que deseja excluir esta mensagem?');">Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

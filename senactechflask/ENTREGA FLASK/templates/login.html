@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SCMPA - Sistema de Cadastro de Mensageria Para Usuários </h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('register') }}">Cadastrar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="sunset-background">
+            <main class="screen-1">
+                <h2>Login</h2>
+                {% if msg %}
+                <p class="error-message">{{ msg }}</p>
+                {% endif %}
+                {% if login_success %}
+                <p class="success-message">Login bem-sucedido! Redirecionando...</p>
+                <script>
+                    setTimeout(function() {
+                        window.location.href = "{{ url_for('visualizer') }}";
+                    }, 2000);
+                </script>
+                {% endif %}
+                <form method="POST" action="{{ url_for('login') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        {{ form.username(class="form-control", placeholder="Digite seu username") }}
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        {{ form.password(class="form-control", placeholder="Digite sua senha") }}
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p class="register-link">Não tem uma conta? <a href="{{ url_for('register') }}">Registre-se</a></p>
+            </main>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

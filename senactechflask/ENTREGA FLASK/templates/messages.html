@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens Enviadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mensagens Enviadas</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('consultar') }}">Consultar</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Bem-vindo, {{ username }}!</h2>
+            {% if messages %}
+                <ul class="messages-list">
+                    {% for message in messages %}
+                        <li>
+                            <strong>Nome:</strong> {{ message.nome }}<br>
+                            <strong>Email:</strong> {{ message.email }}<br>
+                            <strong>Mensagem:</strong> {{ message.mensagem }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Você ainda não enviou nenhuma mensagem.</p>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Cadastro. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
