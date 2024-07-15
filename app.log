@@ -3974,3 +3974,399 @@ INFO:werkzeug: * Restarting with stat
 2024-07-13 21:58:21,607 - INFO - 127.0.0.1 - - [13/Jul/2024 21:58:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2024-07-13 21:58:21,714 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 2024-07-13 21:58:21,715 - INFO - 127.0.0.1 - - [13/Jul/2024 21:58:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:47:09,399 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-07-15 09:47:09,399 - INFO - [33mPress CTRL+C to quit[0m
+2024-07-15 09:47:09,406 - INFO -  * Restarting with stat
+2024-07-15 09:47:09,822 - WARNING -  * Debugger is active!
+2024-07-15 09:47:09,826 - INFO -  * Debugger PIN: 273-556-264
+2024-07-15 09:47:15,667 - INFO - 127.0.0.1 - - [15/Jul/2024 09:47:15] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:47:15,796 - INFO - 127.0.0.1 - - [15/Jul/2024 09:47:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:47:15,990 - INFO - 127.0.0.1 - - [15/Jul/2024 09:47:15] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:47:19,392 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:47:19,402 - INFO - 127.0.0.1 - - [15/Jul/2024 09:47:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:48:18,700 - INFO - 127.0.0.1 - - [15/Jul/2024 09:48:18] "[32mGET /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 09:48:18,713 - INFO - 127.0.0.1 - - [15/Jul/2024 09:48:18] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:48:18,734 - INFO - 127.0.0.1 - - [15/Jul/2024 09:48:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:48:18,758 - INFO - 127.0.0.1 - - [15/Jul/2024 09:48:18] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:48:18,861 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:48:18,863 - INFO - 127.0.0.1 - - [15/Jul/2024 09:48:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:49:06,834 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 09:49:06,854 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:06] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 09:49:06,878 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:49:06,901 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:06] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:49:07,001 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:49:07,001 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:49:43,146 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:43] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 09:49:43,152 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:43] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:49:43,193 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:49:43,222 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:43] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:49:43,326 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:49:43,326 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:43] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:49:57,359 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:57] "POST /login HTTP/1.1" 200 -
+2024-07-15 09:49:57,374 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:49:57,397 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:57] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:49:57,471 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:49:57,471 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:57] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:49:59,443 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:59] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 09:49:59,469 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:49:59,551 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:49:59,551 - INFO - 127.0.0.1 - - [15/Jul/2024 09:49:59] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:50:04,025 - INFO - 127.0.0.1 - - [15/Jul/2024 09:50:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 09:50:04,036 - INFO - 127.0.0.1 - - [15/Jul/2024 09:50:04] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:50:04,055 - INFO - 127.0.0.1 - - [15/Jul/2024 09:50:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:50:04,072 - INFO - 127.0.0.1 - - [15/Jul/2024 09:50:04] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:50:04,154 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:50:04,154 - INFO - 127.0.0.1 - - [15/Jul/2024 09:50:04] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:52:31,943 - INFO - 127.0.0.1 - - [15/Jul/2024 09:52:31] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:52:31,960 - INFO - 127.0.0.1 - - [15/Jul/2024 09:52:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:52:32,096 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:52:32,097 - INFO - 127.0.0.1 - - [15/Jul/2024 09:52:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:55:32,219 - INFO - 127.0.0.1 - - [15/Jul/2024 09:55:32] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:55:32,236 - INFO - 127.0.0.1 - - [15/Jul/2024 09:55:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:55:32,292 - INFO - 127.0.0.1 - - [15/Jul/2024 09:55:32] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:55:32,558 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:55:32,559 - INFO - 127.0.0.1 - - [15/Jul/2024 09:55:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:57:30,792 - INFO - 127.0.0.1 - - [15/Jul/2024 09:57:30] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:57:30,811 - INFO - 127.0.0.1 - - [15/Jul/2024 09:57:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 09:57:30,875 - INFO - 127.0.0.1 - - [15/Jul/2024 09:57:30] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:57:31,141 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:57:31,142 - INFO - 127.0.0.1 - - [15/Jul/2024 09:57:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:58:29,686 - INFO - 127.0.0.1 - - [15/Jul/2024 09:58:29] "GET /login HTTP/1.1" 200 -
+2024-07-15 09:58:29,726 - INFO - 127.0.0.1 - - [15/Jul/2024 09:58:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-07-15 09:58:29,737 - INFO - 127.0.0.1 - - [15/Jul/2024 09:58:29] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 09:58:29,832 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 09:58:29,833 - INFO - 127.0.0.1 - - [15/Jul/2024 09:58:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 09:59:11,021 - INFO - 127.0.0.1 - - [15/Jul/2024 09:59:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:00:27,415 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:00:27,421 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:27] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:00:27,456 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:00:27,510 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:27] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:00:27,770 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:00:27,771 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:00:49,226 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:49] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:00:49,249 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:00:49,273 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:49] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:00:49,351 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:00:49,352 - INFO - 127.0.0.1 - - [15/Jul/2024 10:00:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:01:01,834 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:01] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:01:01,838 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:01] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:01:01,865 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:01:01,876 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:01] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:01:01,955 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:01:01,955 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:01:21,444 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:21] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:01:21,463 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:01:21,499 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:21] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:01:21,590 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:01:21,593 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:01:31,988 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:31] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:01:32,014 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:01:32,026 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:32] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:01:32,104 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:01:32,105 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:01:34,043 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:34] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:01:34,064 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:01:34,154 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:01:34,155 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:01:37,821 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:37] "GET /inserir HTTP/1.1" 200 -
+2024-07-15 10:01:37,852 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:01:37,943 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:01:37,943 - INFO - 127.0.0.1 - - [15/Jul/2024 10:01:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:03,218 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:03] "[32mPOST /inserir HTTP/1.1[0m" 302 -
+2024-07-15 10:02:03,225 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:03] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:02:03,248 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:03,357 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:03,357 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:03] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:05,949 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:05] "GET /alterar/11 HTTP/1.1" 200 -
+2024-07-15 10:02:05,978 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:06,073 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:06,073 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:06] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:12,267 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:12] "[32mPOST /alterar/11 HTTP/1.1[0m" 302 -
+2024-07-15 10:02:12,278 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:12] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:02:12,297 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:12,391 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:12,392 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:12] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:18,631 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:18] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 10:02:18,644 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:18] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:02:18,686 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:18,788 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:18,789 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:33,528 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:33] "GET / HTTP/1.1" 200 -
+2024-07-15 10:02:33,545 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:33,668 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:33,668 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:36,555 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:36] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:02:36,596 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:36,705 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:36,706 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:39,007 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:39] "GET / HTTP/1.1" 200 -
+2024-07-15 10:02:39,034 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:39,140 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:39,140 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:40,062 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:40] "GET /register HTTP/1.1" 200 -
+2024-07-15 10:02:40,092 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:40,192 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:40,192 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:02:44,866 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:44] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:02:44,892 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:02:44,990 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:02:44,990 - INFO - 127.0.0.1 - - [15/Jul/2024 10:02:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:05:17,903 - INFO - 127.0.0.1 - - [15/Jul/2024 10:05:17] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:05:17,918 - INFO - 127.0.0.1 - - [15/Jul/2024 10:05:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:05:18,018 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:05:18,018 - INFO - 127.0.0.1 - - [15/Jul/2024 10:05:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:06:08,592 - INFO - 127.0.0.1 - - [15/Jul/2024 10:06:08] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:06:08,612 - INFO - 127.0.0.1 - - [15/Jul/2024 10:06:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:06:08,730 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:06:08,731 - INFO - 127.0.0.1 - - [15/Jul/2024 10:06:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:08:23,058 - INFO -  * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+2024-07-15 10:08:23,097 - INFO -  * Restarting with stat
+2024-07-15 10:08:23,510 - WARNING -  * Debugger is active!
+2024-07-15 10:08:23,513 - INFO -  * Debugger PIN: 273-556-264
+2024-07-15 10:08:48,619 - INFO -  * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+2024-07-15 10:08:48,675 - INFO -  * Restarting with stat
+2024-07-15 10:08:49,129 - WARNING -  * Debugger is active!
+2024-07-15 10:08:49,133 - INFO -  * Debugger PIN: 273-556-264
+2024-07-15 10:09:08,115 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:09:08,126 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:08] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:09:08,187 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:09:08,288 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:09:08,292 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:09:18,259 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:18] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:09:18,271 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:18] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:09:18,331 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:09:18,431 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:09:18,432 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:09:29,343 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:29] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:09:29,364 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:09:29,473 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:09:29,473 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:09:31,414 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:31] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:09:31,441 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:09:31,524 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:09:31,524 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:09:39,502 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:39] "GET /inserir HTTP/1.1" 200 -
+2024-07-15 10:09:39,530 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:09:39,639 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:09:39,640 - INFO - 127.0.0.1 - - [15/Jul/2024 10:09:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:10:33,859 - INFO - 127.0.0.1 - - [15/Jul/2024 10:10:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 10:10:33,902 - INFO - 127.0.0.1 - - [15/Jul/2024 10:10:33] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:10:33,938 - INFO - 127.0.0.1 - - [15/Jul/2024 10:10:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:10:34,078 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:10:34,079 - INFO - 127.0.0.1 - - [15/Jul/2024 10:10:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:11:05,799 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:05] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:11:05,815 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:11:05,925 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:11:05,925 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:05] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:11:16,222 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:16] "GET / HTTP/1.1" 200 -
+2024-07-15 10:11:16,251 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:11:16,362 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:11:16,363 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:11:19,595 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:19] "GET /register HTTP/1.1" 200 -
+2024-07-15 10:11:19,631 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:11:19,739 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:11:19,740 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:11:21,160 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:21] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:11:21,190 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:11:21,280 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:11:21,281 - INFO - 127.0.0.1 - - [15/Jul/2024 10:11:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:15:50,517 - INFO - 127.0.0.1 - - [15/Jul/2024 10:15:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:15:50,527 - INFO - 127.0.0.1 - - [15/Jul/2024 10:15:50] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:15:50,573 - INFO - 127.0.0.1 - - [15/Jul/2024 10:15:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:15:50,700 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:15:50,700 - INFO - 127.0.0.1 - - [15/Jul/2024 10:15:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:16:01,435 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:01] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:16:01,457 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:16:01,548 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:16:01,548 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:16:14,068 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:14] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:16:14,073 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:14] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:16:14,099 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:16:14,176 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:16:14,176 - INFO - 127.0.0.1 - - [15/Jul/2024 10:16:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:17:01,704 - INFO - 127.0.0.1 - - [15/Jul/2024 10:17:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:17:01,712 - INFO - 127.0.0.1 - - [15/Jul/2024 10:17:01] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:17:01,738 - INFO - 127.0.0.1 - - [15/Jul/2024 10:17:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:17:01,895 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:17:01,897 - INFO - 127.0.0.1 - - [15/Jul/2024 10:17:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:25:47,461 - INFO -  * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+2024-07-15 10:25:47,509 - INFO -  * Restarting with stat
+2024-07-15 10:25:47,932 - WARNING -  * Debugger is active!
+2024-07-15 10:25:47,935 - INFO -  * Debugger PIN: 273-556-264
+2024-07-15 10:26:01,518 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:26:01,526 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:26:08,136 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:08] "GET / HTTP/1.1" 200 -
+2024-07-15 10:26:08,216 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:26:08,468 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:26:08,470 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:26:09,995 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:09] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:26:10,021 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:26:10,057 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:10] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:26:10,122 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:26:10,122 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:26:34,409 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:26:34,416 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:34] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:26:34,450 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:26:34,562 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:26:34,562 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:26:41,467 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:41] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:26:41,486 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:26:41,583 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:26:41,583 - INFO - 127.0.0.1 - - [15/Jul/2024 10:26:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:34:17,037 - INFO -  * Detected change in 'c:\\Senac\\pyy\\senactechflask\\11 07\\main.py', reloading
+2024-07-15 10:34:17,080 - INFO -  * Restarting with stat
+2024-07-15 10:34:17,500 - WARNING -  * Debugger is active!
+2024-07-15 10:34:17,504 - INFO -  * Debugger PIN: 273-556-264
+2024-07-15 10:34:30,540 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:30] "GET / HTTP/1.1" 200 -
+2024-07-15 10:34:30,628 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-07-15 10:34:30,916 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:34:30,918 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:34:32,672 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:32] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:34:32,699 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:34:32,721 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:32] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:34:32,814 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:34:32,815 - INFO - 127.0.0.1 - - [15/Jul/2024 10:34:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:08,098 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:35:08,120 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:08] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:35:08,161 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:08,281 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:08,282 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:32,492 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:32] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:35:32,498 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:32] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:35:32,521 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:32,618 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:32,618 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:45,857 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:45] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:35:45,883 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:45,966 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:45,966 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:47,916 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:47] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:35:47,934 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:48,022 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:48,022 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:51,566 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 10:35:51,578 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:51] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:35:51,612 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:51,708 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:51,708 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:53,557 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:53] "GET / HTTP/1.1" 200 -
+2024-07-15 10:35:53,583 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:53,688 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:53,688 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:35:55,186 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:55] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:35:55,228 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:35:55,316 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:35:55,316 - INFO - 127.0.0.1 - - [15/Jul/2024 10:35:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:36:14,747 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:36:14,758 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:14] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:36:14,780 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:36:14,890 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:36:14,891 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:36:30,117 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:30] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:36:30,155 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:36:30,254 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:36:30,255 - INFO - 127.0.0.1 - - [15/Jul/2024 10:36:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:39:17,741 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:17] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:39:17,764 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:39:17,818 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:17] "[36mGET /static/images/sunset.png HTTP/1.1[0m" 304 -
+2024-07-15 10:39:18,075 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:39:18,075 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:18] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:39:20,967 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:20] "GET / HTTP/1.1" 200 -
+2024-07-15 10:39:20,995 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:39:21,091 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:39:21,091 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:39:24,666 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:24] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:39:24,702 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:39:24,790 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:39:24,791 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:24] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:39:51,989 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:39:51,994 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:51] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:39:52,016 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:39:52,123 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:39:52,123 - INFO - 127.0.0.1 - - [15/Jul/2024 10:39:52] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:40:20,826 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:20] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:40:20,862 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:40:20,951 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:40:20,951 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:40:36,475 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:36] "POST /reset_password HTTP/1.1" 200 -
+2024-07-15 10:40:36,498 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:40:36,601 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:40:36,602 - INFO - 127.0.0.1 - - [15/Jul/2024 10:40:36] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:01,253 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:01] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:41:01,258 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:01] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:41:01,285 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:01,371 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:01,372 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:14,516 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:14] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:41:14,533 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:14,627 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:14,628 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:16,568 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:16] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:41:16,594 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:16,676 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:16,676 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:21,189 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:21] "GET /consultar HTTP/1.1" 200 -
+2024-07-15 10:41:21,209 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:21,306 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:21,307 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:40,779 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:40] "[32mPOST /inserir HTTP/1.1[0m" 302 -
+2024-07-15 10:41:40,786 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:40] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:41:40,815 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:40,909 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:40,910 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:47,358 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 10:41:47,369 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:47] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:41:47,390 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:47,509 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:47,510 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:49,819 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:49] "GET / HTTP/1.1" 200 -
+2024-07-15 10:41:49,858 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:49,952 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:49,952 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:41:51,198 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:51] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:41:51,227 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:41:51,328 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:41:51,329 - INFO - 127.0.0.1 - - [15/Jul/2024 10:41:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:04,854 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2024-07-15 10:42:04,859 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:04] "GET /reset_password HTTP/1.1" 200 -
+2024-07-15 10:42:04,897 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:04,991 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:04,991 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:04] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:17,614 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:17] "[32mPOST /reset_password HTTP/1.1[0m" 302 -
+2024-07-15 10:42:17,620 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:17] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:42:17,643 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:17,747 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:17,747 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:28,850 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:28] "POST /login HTTP/1.1" 200 -
+2024-07-15 10:42:28,879 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:28,962 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:28,964 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:30,907 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:30] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:42:30,929 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:31,013 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:31,014 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:33,710 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:33] "GET /alterar/12 HTTP/1.1" 200 -
+2024-07-15 10:42:33,741 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:33,837 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:33,837 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:49,974 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:49] "[32mPOST /alterar/12 HTTP/1.1[0m" 302 -
+2024-07-15 10:42:49,984 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:49] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:42:50,003 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:50,108 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:50,111 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:42:53,257 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:53] "GET /alterar/12 HTTP/1.1" 200 -
+2024-07-15 10:42:53,289 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:42:53,389 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:42:53,389 - INFO - 127.0.0.1 - - [15/Jul/2024 10:42:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:43:01,292 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:01] "[32mPOST /alterar/12 HTTP/1.1[0m" 302 -
+2024-07-15 10:43:01,301 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:01] "GET /visualizer HTTP/1.1" 200 -
+2024-07-15 10:43:01,323 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:43:01,435 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:43:01,436 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-07-15 10:43:08,673 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:08] "GET /relatorio_pdf HTTP/1.1" 200 -
+2024-07-15 10:43:25,809 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-07-15 10:43:25,815 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:25] "GET /login HTTP/1.1" 200 -
+2024-07-15 10:43:25,853 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-07-15 10:43:25,954 - ERROR - Erro não tratado: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2024-07-15 10:43:25,955 - INFO - 127.0.0.1 - - [15/Jul/2024 10:43:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -

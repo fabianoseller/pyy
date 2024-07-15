@@ -356,3 +356,31 @@ section {
 .btn-primary {
   background-color: #008CBA;
 }
+
+.green-banner {
+  background-color: #e6ffe6;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #99ff99;
+}
+
+.green-banner i {
+  font-size: 0.9em;
+  color: #7dd17d;
+}
+
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ef9a9a;
+  margin-bottom: 15px;
+}
+
+.error-message.not-registered {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+}

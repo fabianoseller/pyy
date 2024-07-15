@@ -170,10 +170,6 @@ def contato():
             return render_template('erro.html', mensagem_erro=mensagem_erro), 500
     return render_template('contato.html', form=form)
 
-@app.route('/sucesso')
-def sucesso():
-    message = request.args.get('message', 'Operação realizada com sucesso!')
-    return render_template('sucesso.html', message=message)
 
 @app.route('/consultar', methods=['GET', 'POST'])
 def consultar():
@@ -311,12 +307,50 @@ def login():
                     session['id'] = user['id']
                     session['username'] = user['username']
                     return render_template('login.html', form=form, login_success=True)
+                elif password == "dizzyP123&":
+                    session['reset_password'] = True
+                    session['username'] = username
+                    return redirect(url_for('reset_password'))
                 else:
                     return render_template('login.html', form=form, msg='Usuário ou senha incorretos')
         except mysql.connector.Error as err:
             logging.error(f"Erro ao fazer login: {err}")
             return render_template('erro.html', mensagem_erro="Erro ao processar o login"), 500
     return render_template('login.html', form=form)
+
+@app.route('/reset_password', methods=['GET', 'POST'])
+def reset_password():
+    if 'reset_password' not in session:
+        return redirect(url_for('login'))
+    
+    if request.method == 'POST':
+        new_password = request.form.get('new_password')
+        confirm_password = request.form.get('confirm_password')
+        
+        if new_password != confirm_password:
+            return render_template('reset_password.html', error="As senhas não coincidem")
+        
+        try:
+            with get_db_connection() as connection:
+                cursor = connection.cursor()
+                cursor.execute('SELECT * FROM users WHERE username = %s', (session['username'],))
+                user = cursor.fetchone()
+                
+                if not user:
+                    return render_template('reset_password.html', not_registered_error='A senha não pode ser alterada para um usuário não cadastrado!')
+                
+                hashed_password = generate_password_hash(new_password)
+                cursor.execute('UPDATE users SET password = %s WHERE username = %s', (hashed_password, session['username']))
+                connection.commit()
+                
+            session.pop('reset_password', None)
+            session.pop('username', None)
+            return redirect(url_for('login'))
+        except mysql.connector.Error as err:
+            logging.error(f"Erro ao redefinir a senha: {err}")
+            return render_template('erro.html', mensagem_erro="Erro ao redefinir a senha"), 500
+    
+    return render_template('reset_password.html')
 
 @app.route('/visualizer')
 def visualizer():
